@@ -502,6 +502,7 @@ input {
   margin: 0 0 24px;
   font-size: 1.45rem;
   line-height: 1.55;
+  white-space: pre-line;
 }
 
 .choice-list {

@@ -1,5 +1,29 @@
 const examList = document.querySelector("#examList");
 
+function getDisplaySubject(item) {
+  if (item.year === 2026 && item.round === 1) {
+    const number = item.id - 8;
+    if ((number >= 1 && number <= 15) || number === 61) return "프로그래밍 언어 활용";
+    if ([16, 21, 50].includes(number)) return "컴퓨터 일반";
+    if (number === 17 || number === 22 || (number >= 24 && number <= 45)) return "데이터베이스";
+    return "정보 시스템 일반";
+  }
+
+  const sampleSubjects = {
+    1: "프로그래밍 언어 활용",
+    2: "컴퓨터 일반",
+    3: "데이터베이스",
+    4: "정보 시스템 일반",
+    5: "프로그래밍 언어 활용",
+    6: "데이터베이스",
+    7: "컴퓨터 일반",
+    8: "정보 시스템 일반"
+  };
+
+  if (sampleSubjects[item.id]) return sampleSubjects[item.id];
+  return item.subject || "기타";
+}
+
 function groupExams(items) {
   return items.reduce((acc, item) => {
     const key = `${item.year}-${item.round}`;
@@ -7,7 +31,7 @@ function groupExams(items) {
       acc[key] = { year: item.year, round: item.round, count: 0, subjects: new Set() };
     }
     acc[key].count += 1;
-    acc[key].subjects.add(item.subject);
+    acc[key].subjects.add(getDisplaySubject(item));
     return acc;
   }, {});
 }

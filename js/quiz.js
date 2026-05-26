@@ -4,12 +4,36 @@ const selectedRound = Number(params.get("round"));
 const selectedSubject = params.get("subject");
 const isRandom = params.get("mode") === "random";
 
+function getDisplaySubject(item) {
+  if (item.year === 2026 && item.round === 1) {
+    const number = item.id - 8;
+    if ((number >= 1 && number <= 15) || number === 61) return "프로그래밍 언어 활용";
+    if ([16, 21, 50].includes(number)) return "컴퓨터 일반";
+    if (number === 17 || number === 22 || (number >= 24 && number <= 45)) return "데이터베이스";
+    return "정보 시스템 일반";
+  }
+
+  const sampleSubjects = {
+    1: "프로그래밍 언어 활용",
+    2: "컴퓨터 일반",
+    3: "데이터베이스",
+    4: "정보 시스템 일반",
+    5: "프로그래밍 언어 활용",
+    6: "데이터베이스",
+    7: "컴퓨터 일반",
+    8: "정보 시스템 일반"
+  };
+
+  if (sampleSubjects[item.id]) return sampleSubjects[item.id];
+  return item.subject || "기타";
+}
+
 let quizQuestions = [...questions];
 if (selectedYear && selectedRound) {
   quizQuestions = quizQuestions.filter((item) => item.year === selectedYear && item.round === selectedRound);
 }
 if (selectedSubject) {
-  quizQuestions = quizQuestions.filter((item) => item.subject === selectedSubject);
+  quizQuestions = quizQuestions.filter((item) => getDisplaySubject(item) === selectedSubject);
 }
 if (isRandom) {
   quizQuestions = quizQuestions.sort(() => Math.random() - 0.5);
@@ -38,6 +62,15 @@ const prevBtn = document.querySelector("#prevBtn");
 const checkBtn = document.querySelector("#checkBtn");
 const nextBtn = document.querySelector("#nextBtn");
 const saveWrongBtn = document.querySelector("#saveWrongBtn");
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
 
 function setTitle() {
   if (selectedYear && selectedRound) {
@@ -68,22 +101,21 @@ function renderNumbers() {
 function renderQuestion() {
   const item = quizQuestions[currentIndex];
   const progress = ((currentIndex + 1) / quizQuestions.length) * 100;
+  const previous = solved.get(currentIndex);
 
   questionCounter.textContent = `${currentIndex + 1} / ${quizQuestions.length}`;
   meterBar.style.width = `${progress}%`;
-  subjectBadge.textContent = item.subject;
+  subjectBadge.textContent = getDisplaySubject(item);
   examBadge.textContent = `${item.year}년 ${item.round}회`;
   questionText.textContent = item.question;
   answerBox.classList.add("hidden");
   answerBox.innerHTML = "";
-
-  const previous = solved.get(currentIndex);
   selectedChoice = selectedAnswers.has(currentIndex) ? selectedAnswers.get(currentIndex) : null;
 
   choiceList.innerHTML = item.choices.map((choice, index) => `
     <button class="choice ${selectedChoice === index ? "selected" : ""}" type="button" data-index="${index}">
       <span>${index + 1}</span>
-      <strong>${choice}</strong>
+      <strong>${escapeHtml(choice)}</strong>
     </button>
   `).join("");
 
@@ -133,8 +165,8 @@ function showAnswer(markSolved = true) {
   answerBox.classList.remove("hidden");
   answerBox.innerHTML = `
     <strong>${isCorrect ? "정답입니다." : "오답입니다."}</strong>
-    <p>정답: ${item.answer + 1}번 ${item.choices[item.answer]}</p>
-    <p>${item.explanation}</p>
+    <p>정답: ${item.answer + 1}번 ${escapeHtml(item.choices[item.answer])}</p>
+    <p>${escapeHtml(item.explanation)}</p>
   `;
 
   updateScore();
@@ -171,7 +203,7 @@ function saveWrongNote() {
   const saved = JSON.parse(localStorage.getItem("wrongNotes") || "[]");
   const exists = saved.some((note) => note.id === item.id);
   if (!exists) {
-    saved.push(item);
+    saved.push({ ...item, subject: getDisplaySubject(item) });
     localStorage.setItem("wrongNotes", JSON.stringify(saved));
   }
   alert("오답노트에 저장했습니다.");
