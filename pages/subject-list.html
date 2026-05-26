@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>기출문제 선택 | 프로그래밍기능사 CBT</title>
+  <title>과목별 문제 | 프로그래밍기능사 CBT</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
@@ -15,8 +15,8 @@
     <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="메뉴 열기">☰</button>
     <nav class="nav" id="navMenu" aria-label="주요 메뉴">
       <a href="../index.html">홈</a>
-      <a href="exam-list.html" aria-current="page">기출문제</a>
-      <a href="subject-list.html">과목별 문제</a>
+      <a href="exam-list.html">기출문제</a>
+      <a href="subject-list.html" aria-current="page">과목별 문제</a>
       <a href="quiz.html">문제풀이</a>
       <a href="study.html">학습정리</a>
       <a href="theory-python.html">기출분석 이론</a>
@@ -26,14 +26,16 @@
 
   <main class="page-shell">
     <div class="page-title">
-      <p>Exam Archive</p>
-      <h1>기출문제 선택</h1>
+      <p>Subject Practice</p>
+      <h1>과목별 문제 풀기</h1>
+      <p class="page-desc">연도와 회차를 섞어서 원하는 과목만 집중적으로 풀 수 있습니다.</p>
     </div>
-    <section class="exam-list" id="examList"></section>
+
+    <section class="subject-practice-grid" id="subjectList"></section>
   </main>
 
   <script src="../js/questions.js"></script>
   <script src="../js/main.js"></script>
-  <script src="../js/exam-list.js"></script>
+  <script src="../js/subject-list.js"></script>
 </body>
 </html>

@@ -234,10 +234,10 @@ const questions = [
     year: 2026,
     round: 1,
     subject: "컴퓨터 일반",
-    question: "다음 트리에 대한 중위 순회 운행 결과는?",
+    question: "다음 트리에 대한 중위 순회 운행 결과는?\n\n        A\n       / \\\n      B   C\n     /   / \\\n    D   E   F",
     choices: ["A B D C E F", "A B C D E F", "D B E C F A", "D B A E C F"],
     answer: 3,
-    explanation: "중위 순회는 왼쪽 서브트리, 루트, 오른쪽 서브트리 순서로 방문합니다."
+    explanation: "중위 순회는 왼쪽 서브트리, 루트, 오른쪽 서브트리 순서입니다. 그림의 트리를 순회하면 D B A E C F가 됩니다."
   },
   {
     id: 25,
