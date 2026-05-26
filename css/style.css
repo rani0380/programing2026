@@ -467,12 +467,27 @@ input {
   cursor: pointer;
 }
 
-.number-board button.active {
-  background: var(--primary);
+.number-board button.unsolved {
+  color: #d8e2ec;
+  background: #26313d;
+  border-color: #4a5664;
 }
 
 .number-board button.solved {
-  border-color: var(--accent);
+  color: #ffffff;
+  background: #149f7f;
+  border-color: #41d4b2;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.number-board button.active {
+  background: var(--primary);
+  border-color: #84c5ff;
+  box-shadow: 0 0 0 2px rgba(132, 197, 255, 0.28);
+}
+
+.number-board button.active.solved {
+  background: linear-gradient(135deg, var(--primary) 0 58%, var(--accent) 58% 100%);
 }
 
 .quiz-main {

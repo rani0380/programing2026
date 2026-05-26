@@ -84,7 +84,13 @@ function setTitle() {
 
 function renderNumbers() {
   numberBoard.innerHTML = quizQuestions.map((_, index) => `
-    <button class="${index === currentIndex ? "active" : ""} ${selectedAnswers.has(index) ? "solved" : ""}" type="button" data-index="${index}">
+    <button
+      class="${index === currentIndex ? "active" : ""} ${selectedAnswers.has(index) ? "solved" : "unsolved"}"
+      type="button"
+      data-index="${index}"
+      title="${selectedAnswers.has(index) ? "푼 문제" : "안 푼 문제"}"
+      aria-label="${index + 1}번 ${selectedAnswers.has(index) ? "푼 문제" : "안 푼 문제"}"
+    >
       ${index + 1}
     </button>
   `).join("");
