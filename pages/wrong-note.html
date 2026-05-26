@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오답노트 | 프로그래밍기능사 CBT</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">CBT</span>
+      <span>프로그래밍기능사</span>
+    </a>
+    <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="메뉴 열기">☰</button>
+    <nav class="nav" id="navMenu" aria-label="주요 메뉴">
+      <a href="../index.html">홈</a>
+      <a href="exam-list.html">기출문제</a>
+      <a href="quiz.html">문제풀이</a>
+      <a href="study.html">학습정리</a>
+      <a href="wrong-note.html" aria-current="page">오답노트</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <div class="page-title">
+      <p>Review</p>
+      <h1>오답노트</h1>
+    </div>
+    <section class="wrong-list" id="wrongList"></section>
+  </main>
+
+  <script src="../js/questions.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/wrong-note.js"></script>
+</body>
+</html>

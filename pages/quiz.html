@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>문제풀이 | 프로그래밍기능사 CBT</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="topbar compact">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">CBT</span>
+      <span>프로그래밍기능사</span>
+    </a>
+    <nav class="nav desktop-only" aria-label="주요 메뉴">
+      <a href="exam-list.html">기출문제</a>
+      <a href="wrong-note.html">오답노트</a>
+    </nav>
+  </header>
+
+  <main class="quiz-layout">
+    <aside class="quiz-side">
+      <div>
+        <p class="eyebrow">CBT Practice</p>
+        <h1 id="quizTitle">문제풀이</h1>
+      </div>
+      <div class="quiz-meter">
+        <span id="questionCounter">1 / 1</span>
+        <div class="meter-track"><span id="meterBar"></span></div>
+      </div>
+      <div class="score-summary">
+        <div><strong id="correctCount">0</strong><span>정답</span></div>
+        <div><strong id="wrongLiveCount">0</strong><span>오답</span></div>
+      </div>
+      <div class="number-board" id="numberBoard" aria-label="문제 번호"></div>
+    </aside>
+
+    <section class="quiz-main">
+      <div class="question-card">
+        <div class="question-meta">
+          <span id="subjectBadge">과목</span>
+          <span id="examBadge">기출</span>
+        </div>
+        <h2 id="questionText">문제를 불러오는 중입니다.</h2>
+        <div class="choice-list" id="choiceList"></div>
+        <div class="answer-box hidden" id="answerBox"></div>
+      </div>
+
+      <div class="quiz-actions">
+        <button class="button secondary" id="prevBtn" type="button">이전</button>
+        <button class="button primary" id="checkBtn" type="button">정답 확인</button>
+        <button class="button secondary" id="saveWrongBtn" type="button">오답 저장</button>
+        <button class="button primary" id="nextBtn" type="button">다음</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/questions.js"></script>
+  <script src="../js/quiz.js"></script>
+</body>
+</html>

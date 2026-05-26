@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프로그래밍기능사 CBT</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">CBT</span>
+      <span>프로그래밍기능사</span>
+    </a>
+    <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="메뉴 열기">☰</button>
+    <nav class="nav" id="navMenu" aria-label="주요 메뉴">
+      <a href="index.html" aria-current="page">홈</a>
+      <a href="pages/exam-list.html">기출문제</a>
+      <a href="pages/quiz.html">문제풀이</a>
+      <a href="pages/study.html">학습정리</a>
+      <a href="pages/wrong-note.html">오답노트</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Computer Based Test Practice</p>
+        <h1>프로그래밍기능사 필기, 실제 CBT처럼 연습하세요.</h1>
+        <p class="hero-desc">
+          연도별 기출, 과목별 학습, 랜덤 문제, 오답노트를 한 화면 흐름으로 연결한 정적 웹 CBT 학습 사이트입니다.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="pages/exam-list.html">기출문제 선택</a>
+          <a class="button secondary" href="pages/quiz.html?mode=random">랜덤 문제 시작</a>
+        </div>
+      </div>
+
+      <section class="exam-panel" aria-label="오늘의 CBT 현황">
+        <div class="panel-head">
+          <span>오늘의 학습</span>
+          <strong>필기 모의 CBT</strong>
+        </div>
+        <div class="progress-ring" aria-label="목표 달성률 65%">
+          <span>65%</span>
+        </div>
+        <div class="panel-grid">
+          <div>
+            <strong>20</strong>
+            <span>추천 문제</span>
+          </div>
+          <div>
+            <strong>60점</strong>
+            <span>합격 기준</span>
+          </div>
+          <div>
+            <strong id="wrongCount">0</strong>
+            <span>저장된 오답</span>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p>Quick Start</p>
+        <h2>바로 학습하기</h2>
+      </div>
+      <div class="quick-grid">
+        <a class="quick-card" href="pages/exam-list.html">
+          <span class="quick-icon">01</span>
+          <h3>연도별 기출문제</h3>
+          <p>회차를 선택하고 실제 시험 화면처럼 순서대로 풀이합니다.</p>
+        </a>
+        <a class="quick-card" href="pages/quiz.html?subject=프로그래밍 언어 활용">
+          <span class="quick-icon">02</span>
+          <h3>과목별 집중 풀이</h3>
+          <p>C언어, 제어문, 함수, 배열 등 약한 과목을 집중적으로 풉니다.</p>
+        </a>
+        <a class="quick-card" href="pages/quiz.html?mode=random">
+          <span class="quick-icon">03</span>
+          <h3>랜덤 CBT</h3>
+          <p>과목 구분 없이 섞어 풀면서 실전 감각을 확인합니다.</p>
+        </a>
+        <a class="quick-card" href="pages/wrong-note.html">
+          <span class="quick-icon">04</span>
+          <h3>오답노트</h3>
+          <p>틀린 문제만 다시 보고 정답률을 끌어올립니다.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section split-section">
+      <div>
+        <div class="section-heading left">
+          <p>Subjects</p>
+          <h2>필기 과목 구성</h2>
+        </div>
+        <div class="subject-stack">
+          <article>
+            <span>컴퓨터 일반</span>
+            <p>컴퓨터 구조, 운영체제, 자료 표현</p>
+          </article>
+          <article>
+            <span>프로그래밍 언어 활용</span>
+            <p>C언어 문법, 제어문, 배열, 함수</p>
+          </article>
+          <article>
+            <span>데이터베이스</span>
+            <p>SQL, 키, 정규화, 관계형 모델</p>
+          </article>
+          <article>
+            <span>정보 시스템 일반</span>
+            <p>네트워크, 보안, 소프트웨어 공학</p>
+          </article>
+        </div>
+      </div>
+
+      <aside class="notice-panel">
+        <h2>학습 방식</h2>
+        <p>문제를 선택하면 답안 체크, 정답 확인, 해설 보기, 오답 저장까지 한 페이지에서 진행됩니다.</p>
+        <a class="button primary full" href="pages/quiz.html">문제풀이 화면 보기</a>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 프로그래밍기능사 CBT. 개인 학습용 정적 웹사이트.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
