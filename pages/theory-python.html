@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python 기출분석 이론 | 프로그래밍기능사 CBT</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">CBT</span>
+      <span>프로그래밍기능사</span>
+    </a>
+    <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="메뉴 열기">☰</button>
+    <nav class="nav" id="navMenu" aria-label="주요 메뉴">
+      <a href="../index.html">홈</a>
+      <a href="exam-list.html">기출문제</a>
+      <a href="quiz.html">문제풀이</a>
+      <a href="study.html">학습정리</a>
+      <a href="theory-python.html" aria-current="page">기출분석 이론</a>
+      <a href="wrong-note.html">오답노트</a>
+    </nav>
+  </header>
+
+  <main class="page-shell theory-shell">
+    <div class="page-title">
+      <p>Python Theory</p>
+      <h1>Python 언어 기본, 자료형과 연산자</h1>
+      <p class="page-desc">기본서 기출분석 자료를 바탕으로 시험에 자주 나오는 개념을 요약했습니다.</p>
+    </div>
+
+    <section class="theory-layout">
+      <aside class="theory-toc">
+        <a href="#basic">Python 기본</a>
+        <a href="#comment">주석과 들여쓰기</a>
+        <a href="#print-input">print, input</a>
+        <a href="#datatype">자료형</a>
+        <a href="#casting">자료형 변환</a>
+        <a href="#operator">연산자</a>
+        <a href="#precedence">연산자 우선순위</a>
+        <a href="#string">문자열 슬라이싱</a>
+        <a href="#string-method">문자열 함수</a>
+        <a href="#collection">군집 자료형</a>
+        <a href="#exam-point">기출 포인트</a>
+      </aside>
+
+      <div class="theory-content">
+        <article class="theory-section" id="basic">
+          <span class="chapter-label">01</span>
+          <h2>Python 기본</h2>
+          <p>Python은 문법이 비교적 간단하고 라이브러리가 풍부해 초보자가 접근하기 쉬운 프로그래밍 언어입니다. 코드 작성과 실행 흐름을 묻는 문제가 자주 출제됩니다.</p>
+          <div class="note-box">
+            <strong>대화형 셸</strong>
+            <p>명령을 한 줄씩 입력하고 결과를 바로 확인할 수 있습니다. 간단한 계산, 문자열 출력, 변수 확인 문제와 연결됩니다.</p>
+          </div>
+          <pre><code>&gt;&gt;&gt; 5 + 3
+8
+&gt;&gt;&gt; a = 5
+&gt;&gt;&gt; b = 4
+&gt;&gt;&gt; a + b
+9</code></pre>
+        </article>
+
+        <article class="theory-section" id="comment">
+          <span class="chapter-label">02</span>
+          <h2>주석과 들여쓰기</h2>
+          <p>주석은 프로그램 실행과 관계없는 설명입니다. 한 줄 주석은 `#`을 사용하고, 여러 줄 설명은 따옴표를 활용할 수 있습니다.</p>
+          <pre><code>print("안녕하세요")  # 화면에 문장을 출력
+
+'''
+여러 줄 설명을 적을 때
+사용할 수 있습니다.
+'''</code></pre>
+          <div class="tip-box">
+            <strong>시험 포인트</strong>
+            <p>Python은 중괄호 대신 들여쓰기로 코드 블록을 구분합니다. 조건문과 반복문에서 들여쓰기가 틀리면 오류가 발생합니다.</p>
+          </div>
+        </article>
+
+        <article class="theory-section" id="print-input">
+          <span class="chapter-label">03</span>
+          <h2>print와 input</h2>
+          <p>`print()`는 값을 화면에 출력하고, `input()`은 사용자가 입력한 값을 문자열로 받습니다. 숫자로 계산하려면 `int()` 또는 `float()` 변환이 필요합니다.</p>
+          <pre><code>name = input("이름을 입력하세요: ")
+print(name, "님 안녕하세요")
+
+a = int(input("숫자를 입력하세요: "))
+print(a + a)</code></pre>
+          <ul class="theory-list">
+            <li>`sep` 옵션은 출력값 사이의 구분 문자를 정합니다.</li>
+            <li>`end` 옵션은 출력 후 마지막 문자를 정합니다.</li>
+            <li>쉼표를 사용하면 여러 값을 한 번에 출력할 수 있습니다.</li>
+          </ul>
+        </article>
+
+        <article class="theory-section" id="datatype">
+          <span class="chapter-label">04</span>
+          <h2>자료형</h2>
+          <p>자료형은 데이터의 종류입니다. 변수에 저장되는 값에 따라 정수, 실수, 문자열, 참과 거짓 등이 구분됩니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>자료형</th><th>예시</th><th>핵심</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>정수형</td><td>10, -3</td><td>소수점이 없는 숫자</td></tr>
+                <tr><td>실수형</td><td>3.14</td><td>소수점이 있는 숫자</td></tr>
+                <tr><td>문자열</td><td>"hello"</td><td>문자의 나열</td></tr>
+                <tr><td>논리형</td><td>True, False</td><td>참 또는 거짓</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <pre><code>a = 10
+b = 5
+c = "프로그래밍"
+print(type(a))
+print(type(c))</code></pre>
+        </article>
+
+        <article class="theory-section" id="casting">
+          <span class="chapter-label">05</span>
+          <h2>자료형 변환</h2>
+          <p>자료형 변환은 데이터를 다른 자료형으로 바꾸는 것입니다. 입력값은 기본적으로 문자열이므로 계산 전에 숫자형 변환이 필요합니다.</p>
+          <pre><code>str(10)       # "10"
+int("10")     # 10
+float("12.5") # 12.5
+list("hi")    # ["h", "i"]</code></pre>
+          <div class="tip-box">
+            <strong>자주 나오는 실수</strong>
+            <p>`input()`으로 받은 값은 문자열입니다. `input()` 값끼리 더하면 숫자 덧셈이 아니라 문자열 연결이 됩니다.</p>
+          </div>
+        </article>
+
+        <article class="theory-section" id="operator">
+          <span class="chapter-label">06</span>
+          <h2>연산자</h2>
+          <p>연산자는 값을 계산하거나 비교할 때 사용하는 기호입니다. 산술 연산자와 비교 연산자는 실행 결과를 묻는 문제에 자주 등장합니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>연산자</th><th>의미</th><th>예시</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>+</td><td>더하기</td><td>a + b</td></tr>
+                <tr><td>-</td><td>빼기</td><td>a - b</td></tr>
+                <tr><td>*</td><td>곱하기</td><td>a * b</td></tr>
+                <tr><td>/</td><td>나누기</td><td>a / b</td></tr>
+                <tr><td>//</td><td>몫</td><td>a // b</td></tr>
+                <tr><td>%</td><td>나머지</td><td>a % b</td></tr>
+                <tr><td>**</td><td>거듭제곱</td><td>a ** b</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <pre><code>a = 10
+b = 5
+print(a + b)  # 15
+print(a / b)  # 2.0
+print(a ** b) # 100000</code></pre>
+        </article>
+
+        <article class="theory-section" id="precedence">
+          <span class="chapter-label">07</span>
+          <h2>연산자 우선순위</h2>
+          <p>여러 연산자가 한 식에 함께 나오면 정해진 우선순위에 따라 계산됩니다. 괄호가 있으면 괄호 안의 식이 가장 먼저 계산됩니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>우선순위</th><th>연산자</th><th>의미</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>**</td><td>거듭제곱</td></tr>
+                <tr><td>2</td><td>*, /, %, //</td><td>곱하기, 나누기, 나머지, 몫</td></tr>
+                <tr><td>3</td><td>+, -</td><td>더하기, 빼기</td></tr>
+                <tr><td>4</td><td>&lt;, &gt;, &lt;=, &gt;=, ==, !=</td><td>관계 연산</td></tr>
+                <tr><td>5</td><td>not</td><td>논리 부정</td></tr>
+                <tr><td>6</td><td>and</td><td>논리곱</td></tr>
+                <tr><td>7</td><td>or</td><td>논리합</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <pre><code>print(2 + 5 > 2 + 5 and not 3 * 3 > 10)
+# False and not False
+# False and True
+# 결과: False</code></pre>
+        </article>
+
+        <article class="theory-section" id="string">
+          <span class="chapter-label">08</span>
+          <h2>문자열 슬라이싱</h2>
+          <p>문자열은 문자들이 순서대로 나열된 시퀀스 자료형입니다. 인덱스는 왼쪽에서 0부터 시작하고, 오른쪽에서 접근할 때는 -1부터 시작합니다.</p>
+          <pre><code>text = "handaman nice"
+print(text[0])      # h
+print(text[5:8])    # man
+print(text[8:])     # nice
+print(text[::-1])   # ecin namadnah</code></pre>
+          <ul class="theory-list">
+            <li>`text[a:b]`는 a번 위치부터 b번 바로 앞까지 가져옵니다.</li>
+            <li>`text[:b]`는 처음부터 b번 바로 앞까지 가져옵니다.</li>
+            <li>`text[a:]`는 a번 위치부터 끝까지 가져옵니다.</li>
+            <li>`text[::-1]`은 문자열을 거꾸로 뒤집는 대표 패턴입니다.</li>
+          </ul>
+        </article>
+
+        <article class="theory-section" id="string-method">
+          <span class="chapter-label">09</span>
+          <h2>문자열 함수</h2>
+          <p>문자열 함수는 실행 결과를 묻는 문제가 자주 나옵니다. 함수 이름과 반환값의 의미를 짝으로 기억하세요.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>함수</th><th>기능</th><th>예시 결과</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>format()</td><td>문자열 형식 지정</td><td>"ABC 123"</td></tr>
+                <tr><td>replace()</td><td>문자열 바꾸기</td><td>"ABC KBC"</td></tr>
+                <tr><td>split()</td><td>기준 문자로 나누기</td><td>리스트 반환</td></tr>
+                <tr><td>join()</td><td>문자열 사이에 구분자 넣기</td><td>"a/b/c"</td></tr>
+                <tr><td>count()</td><td>문자 개수 세기</td><td>1, 2, 0</td></tr>
+                <tr><td>strip()</td><td>양쪽 공백 제거</td><td>"abcde"</td></tr>
+                <tr><td>find()</td><td>위치 찾기, 없으면 -1</td><td>0, 4, -1</td></tr>
+                <tr><td>index()</td><td>위치 찾기, 없으면 오류</td><td>오류 발생 가능</td></tr>
+                <tr><td>upper(), lower()</td><td>대문자, 소문자 변환</td><td>"ABC", "abc"</td></tr>
+                <tr><td>zfill()</td><td>앞쪽을 0으로 채우기</td><td>"0001"</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <pre><code>text = "abc ABC"
+print(text.replace("A", "K"))  # abc KBC
+print(text.count("A"))         # 1
+print("-".join("abc"))         # a-b-c</code></pre>
+        </article>
+
+        <article class="theory-section" id="collection">
+          <span class="chapter-label">10</span>
+          <h2>군집 자료형</h2>
+          <p>군집 자료형은 여러 값을 하나의 이름으로 관리하는 자료형입니다. 리스트와 딕셔너리는 기출에서 실행 결과를 묻는 형태로 자주 출제됩니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>자료형</th><th>표현</th><th>특징</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>리스트</td><td>[1, 2, 3]</td><td>순서가 있고 값 변경 가능</td></tr>
+                <tr><td>딕셔너리</td><td>{"kor": 80}</td><td>키와 값으로 저장</td></tr>
+                <tr><td>튜플</td><td>(1, 2, 3)</td><td>순서가 있고 값 변경 불가</td></tr>
+                <tr><td>세트</td><td>{1, 2, 3}</td><td>중복을 허용하지 않음</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <pre><code>list1 = [1, 2, 3]
+list2 = [4, 5]
+list1.insert(2, list2)
+print(list1)  # [1, 2, [4, 5], 3]
+
+score = {"kor": 80, "eng": 90}
+score["sci"] = 92
+print(score)</code></pre>
+          <div class="tip-box">
+            <strong>리스트 함수</strong>
+            <p>`append`, `insert`, `remove`, `sort`, `reverse`, `count`의 실행 결과를 구분하세요. `insert(위치, 값)`은 지정한 위치에 값을 끼워 넣습니다.</p>
+          </div>
+        </article>
+
+        <article class="theory-section" id="exam-point">
+          <span class="chapter-label">11</span>
+          <h2>기출 포인트</h2>
+          <div class="exam-point-grid">
+            <div>
+              <strong>출력 결과</strong>
+              <p>코드를 한 줄씩 따라가며 변수 값이 어떻게 바뀌는지 확인합니다.</p>
+            </div>
+            <div>
+              <strong>인덱스와 슬라이스</strong>
+              <p>시작 위치는 포함, 끝 위치는 포함하지 않는다는 점을 기억하세요.</p>
+            </div>
+            <div>
+              <strong>input 자료형</strong>
+              <p>입력값은 문자열입니다. 계산 문제에서는 `int()` 변환 여부를 확인하세요.</p>
+            </div>
+            <div>
+              <strong>논리 연산</strong>
+              <p>`not`, `and`, `or`의 우선순위와 결과를 차례대로 판단하세요.</p>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="quiz.html?subject=프로그래밍 언어 활용">관련 문제 풀기</a>
+            <a class="button secondary" href="study.html">과목별 정리로 돌아가기</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

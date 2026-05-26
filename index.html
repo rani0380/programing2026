@@ -18,6 +18,7 @@
       <a href="pages/exam-list.html">기출문제</a>
       <a href="pages/quiz.html">문제풀이</a>
       <a href="pages/study.html">학습정리</a>
+      <a href="pages/theory-python.html">기출분석 이론</a>
       <a href="pages/wrong-note.html">오답노트</a>
     </nav>
   </header>
@@ -28,11 +29,11 @@
         <p class="eyebrow">Computer Based Test Practice</p>
         <h1>프로그래밍기능사 필기, 실제 CBT처럼 연습하세요.</h1>
         <p class="hero-desc">
-          연도별 기출, 과목별 학습, 랜덤 문제, 오답노트를 한 화면 흐름으로 연결한 정적 웹 CBT 학습 사이트입니다.
+          연도별 기출문제, 과목별 학습정리, 기출분석 이론, 랜덤 문제, 오답노트를 한 번에 학습할 수 있는 정적 웹사이트입니다.
         </p>
         <div class="actions">
           <a class="button primary" href="pages/exam-list.html">기출문제 선택</a>
-          <a class="button secondary" href="pages/quiz.html?mode=random">랜덤 문제 시작</a>
+          <a class="button secondary" href="pages/theory-python.html">기출분석 이론 보기</a>
         </div>
       </div>
 
@@ -45,18 +46,9 @@
           <span>65%</span>
         </div>
         <div class="panel-grid">
-          <div>
-            <strong>20</strong>
-            <span>추천 문제</span>
-          </div>
-          <div>
-            <strong>60점</strong>
-            <span>합격 기준</span>
-          </div>
-          <div>
-            <strong id="wrongCount">0</strong>
-            <span>저장된 오답</span>
-          </div>
+          <div><strong>20</strong><span>추천 문제</span></div>
+          <div><strong>60점</strong><span>합격 기준</span></div>
+          <div><strong id="wrongCount">0</strong><span>저장된 오답</span></div>
         </div>
       </section>
     </section>
@@ -72,20 +64,20 @@
           <h3>연도별 기출문제</h3>
           <p>회차를 선택하고 실제 시험 화면처럼 순서대로 풀이합니다.</p>
         </a>
-        <a class="quick-card" href="pages/quiz.html?subject=프로그래밍 언어 활용">
-          <span class="quick-icon">02</span>
-          <h3>과목별 집중 풀이</h3>
-          <p>C언어, 제어문, 함수, 배열 등 약한 과목을 집중적으로 풉니다.</p>
-        </a>
         <a class="quick-card" href="pages/quiz.html?mode=random">
-          <span class="quick-icon">03</span>
+          <span class="quick-icon">02</span>
           <h3>랜덤 CBT</h3>
-          <p>과목 구분 없이 섞어 풀면서 실전 감각을 확인합니다.</p>
+          <p>과목 구분 없이 문제를 섞어 풀면서 실전 감각을 확인합니다.</p>
         </a>
-        <a class="quick-card" href="pages/wrong-note.html">
+        <a class="quick-card" href="pages/study.html">
+          <span class="quick-icon">03</span>
+          <h3>과목별 학습정리</h3>
+          <p>필기 과목별로 자주 나오는 개념을 먼저 정리합니다.</p>
+        </a>
+        <a class="quick-card" href="pages/theory-python.html">
           <span class="quick-icon">04</span>
-          <h3>오답노트</h3>
-          <p>틀린 문제만 다시 보고 정답률을 끌어올립니다.</p>
+          <h3>기출분석 이론</h3>
+          <p>기본서 기출분석 자료를 바탕으로 Python 핵심 이론을 요약했습니다.</p>
         </a>
       </div>
     </section>
@@ -97,28 +89,15 @@
           <h2>필기 과목 구성</h2>
         </div>
         <div class="subject-stack">
-          <article>
-            <span>컴퓨터 일반</span>
-            <p>컴퓨터 구조, 운영체제, 자료 표현</p>
-          </article>
-          <article>
-            <span>프로그래밍 언어 활용</span>
-            <p>C언어 문법, 제어문, 배열, 함수</p>
-          </article>
-          <article>
-            <span>데이터베이스</span>
-            <p>SQL, 키, 정규화, 관계형 모델</p>
-          </article>
-          <article>
-            <span>정보 시스템 일반</span>
-            <p>네트워크, 보안, 소프트웨어 공학</p>
-          </article>
+          <article><span>컴퓨터 일반</span><p>컴퓨터 구조, 운영체제, 자료 표현</p></article>
+          <article><span>프로그래밍 언어 활용</span><p>Python, Java, JavaScript, 자료형, 연산자</p></article>
+          <article><span>데이터베이스</span><p>SQL, 키, 정규화, 관계형 모델</p></article>
+          <article><span>정보 시스템 일반</span><p>네트워크, 보안, 소프트웨어 공학</p></article>
         </div>
       </div>
-
       <aside class="notice-panel">
         <h2>학습 방식</h2>
-        <p>문제를 선택하면 답안 체크, 정답 확인, 해설 보기, 오답 저장까지 한 페이지에서 진행됩니다.</p>
+        <p>이론을 먼저 훑고, 기출문제를 풀고, 틀린 문제를 오답노트에 저장해 반복 학습하세요.</p>
         <a class="button primary full" href="pages/quiz.html">문제풀이 화면 보기</a>
       </aside>
     </section>
