@@ -244,3 +244,4 @@ nextBtn.addEventListener("click", () => {
     gradeAll();
   }
 });
+
