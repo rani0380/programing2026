@@ -480,6 +480,20 @@ input {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
 }
 
+.number-board button.correct {
+  color: #ffffff;
+  background: #15946f;
+  border-color: #48d6b1;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+.number-board button.wrong {
+  color: #ffffff;
+  background: #c2414b;
+  border-color: #ff8b94;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
 .number-board button.active {
   background: var(--primary);
   border-color: #84c5ff;
@@ -488,6 +502,14 @@ input {
 
 .number-board button.active.solved {
   background: linear-gradient(135deg, var(--primary) 0 58%, var(--accent) 58% 100%);
+}
+
+.number-board button.active.correct {
+  background: linear-gradient(135deg, var(--primary) 0 48%, #15946f 48% 100%);
+}
+
+.number-board button.active.wrong {
+  background: linear-gradient(135deg, var(--primary) 0 48%, #c2414b 48% 100%);
 }
 
 .quiz-main {

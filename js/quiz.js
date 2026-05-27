@@ -73,11 +73,11 @@ function setTitle() {
 function renderNumbers() {
   numberBoard.innerHTML = quizQuestions.map((_, index) => `
     <button
-      class="${index === currentIndex ? "active" : ""} ${selectedAnswers.has(index) ? "solved" : "unsolved"}"
+      class="${getNumberButtonClass(index)}"
       type="button"
       data-index="${index}"
-      title="${selectedAnswers.has(index) ? "푼 문제" : "안 푼 문제"}"
-      aria-label="${index + 1}번 ${selectedAnswers.has(index) ? "푼 문제" : "안 푼 문제"}"
+      title="${getNumberButtonLabel(index)}"
+      aria-label="${index + 1}번 ${getNumberButtonLabel(index)}"
     >
       ${index + 1}
     </button>
@@ -90,6 +90,25 @@ function renderNumbers() {
       renderQuestion();
     });
   });
+}
+
+function getNumberButtonClass(index) {
+  const classes = [index === currentIndex ? "active" : ""];
+  const result = solved.get(index);
+
+  if (result) {
+    classes.push(result.correct ? "correct" : "wrong");
+  } else {
+    classes.push(selectedAnswers.has(index) ? "solved" : "unsolved");
+  }
+
+  return classes.filter(Boolean).join(" ");
+}
+
+function getNumberButtonLabel(index) {
+  const result = solved.get(index);
+  if (result) return result.correct ? "정답" : "오답";
+  return selectedAnswers.has(index) ? "푼 문제" : "안 푼 문제";
 }
 
 function renderQuestion() {
