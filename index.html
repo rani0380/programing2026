@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프로그래밍기능사 CBT</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">CBT</span>
+      <span>프로그래밍기능사</span>
+    </a>
+    <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="메뉴 열기">☰</button>
+    <nav class="nav" id="navMenu" aria-label="주요 메뉴">
+      <a href="index.html" aria-current="page">홈</a>
+      <a href="pages/exam-list.html">기출문제</a>
+      <a href="pages/subject-list.html">과목별 문제</a>
+      <a href="pages/quiz.html">문제풀이</a>
+      <a href="pages/study.html">학습정리</a>
+      <a href="pages/theory-python.html">기출분석 이론</a>
+      <a href="pages/wrong-note.html">오답노트</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="landing-hero">
+      <div class="landing-hero-inner">
+        <span class="hero-kicker">지금 바로 시작하세요</span>
+        <h1>합격을 향한 첫 걸음,<br /><strong>프로그래밍기능사 CBT</strong></h1>
+        <p>기출문제와 과목별 문제, 모의고사, 오답노트로 필기 합격을 준비하세요.</p>
+        <div class="landing-actions">
+          <a class="landing-button primary" href="pages/subject-list.html">시작하기 ›</a>
+          <a class="landing-button ghost" href="#features">기능 살펴보기</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-modes" id="features">
+      <a class="mode-card primary-mode" href="pages/subject-list.html">
+        <span>01</span>
+        <h2>풀이 방식 선택</h2>
+        <p>기출문제, 과목별 문제, 모의고사 중 원하는 방식으로 시작합니다.</p>
+      </a>
+      <a class="mode-card" href="pages/exam-list.html">
+        <span>02</span>
+        <h2>기출문제</h2>
+        <p>연도와 회차를 선택해 실제 CBT처럼 순서대로 풀이합니다.</p>
+      </a>
+      <a class="mode-card" href="pages/study.html">
+        <span>03</span>
+        <h2>학습정리</h2>
+        <p>시험에 자주 나오는 기본 개념을 과목별로 정리합니다.</p>
+      </a>
+      <a class="mode-card" href="pages/wrong-note.html">
+        <span>04</span>
+        <h2>오답노트</h2>
+        <p>어려운 문제를 저장하고 다시 확인합니다.</p>
+      </a>
+    </section>
+
+    <section class="home-band">
+      <div>
+        <p class="eyebrow">Subject Map</p>
+        <h2>과목별로 약한 부분만 따로 풀 수 있습니다.</h2>
+      </div>
+      <div class="subject-strip">
+        <a href="pages/quiz.html?subject=프로그래밍%20언어%20활용">프로그래밍 언어 활용</a>
+        <a href="pages/quiz.html?subject=컴퓨터%20일반">컴퓨터 일반</a>
+        <a href="pages/quiz.html?subject=데이터베이스">데이터베이스</a>
+        <a href="pages/quiz.html?subject=정보%20시스템%20일반">정보 시스템 일반</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 프로그래밍기능사 CBT. 학습용 대구스마트고소프트웨어과 웹사이트.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
