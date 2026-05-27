@@ -35,6 +35,7 @@ const solved = new Map();
 const quizTitle = document.querySelector("#quizTitle");
 const questionCounter = document.querySelector("#questionCounter");
 const meterBar = document.querySelector("#meterBar");
+const scorePoint = document.querySelector("#scorePoint");
 const correctCount = document.querySelector("#correctCount");
 const wrongLiveCount = document.querySelector("#wrongLiveCount");
 const numberBoard = document.querySelector("#numberBoard");
@@ -196,8 +197,13 @@ function showAnswer(markSolved = true) {
 
 function updateScore() {
   const values = Array.from(solved.values());
-  correctCount.textContent = values.filter((item) => item.correct).length;
-  wrongLiveCount.textContent = values.filter((item) => !item.correct).length;
+  const correct = values.filter((item) => item.correct).length;
+  const wrong = values.filter((item) => !item.correct).length;
+  const score = quizQuestions.length ? Math.round((correct / quizQuestions.length) * 100) : 0;
+
+  scorePoint.textContent = `${score}점`;
+  correctCount.textContent = correct;
+  wrongLiveCount.textContent = wrong;
 }
 
 function gradeAll() {
