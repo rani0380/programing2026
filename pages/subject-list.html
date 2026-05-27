@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>과목별 문제 | 프로그래밍기능사 CBT</title>
+  <title>문제풀이 선택 | 프로그래밍기능사 CBT</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
@@ -24,14 +24,62 @@
     </nav>
   </header>
 
-  <main class="page-shell">
-    <div class="page-title">
-      <p>Subject Practice</p>
-      <h1>과목별 문제 풀기</h1>
-      <p class="page-desc">연도와 회차를 섞어서 원하는 과목만 집중적으로 풀 수 있습니다.</p>
-    </div>
+  <main class="page-shell mode-shell">
+    <section class="mode-panel">
+      <div class="mode-title">
+        <p>CBT Practice Mode</p>
+        <h1>프로그래밍기능사 필기</h1>
+      </div>
 
-    <section class="subject-practice-grid" id="subjectList"></section>
+      <div class="exam-info-table" aria-label="시험 과목 구성">
+        <div class="table-row table-head">
+          <span>답안 표기란</span>
+          <span>과목명</span>
+          <span>문항수</span>
+          <span>합격점수</span>
+        </div>
+        <div class="table-row">
+          <span>1 과목</span>
+          <span>프로그래밍 언어 활용 및 응용</span>
+          <span>20개</span>
+          <span class="pass-score" rowspan="3">60점</span>
+        </div>
+        <div class="table-row">
+          <span>2 과목</span>
+          <span>데이터베이스 활용</span>
+          <span>20개</span>
+          <span class="pass-score mobile-only">60점</span>
+        </div>
+        <div class="table-row">
+          <span>3 과목</span>
+          <span>정보 시스템 및 응용 SW 기초 기술</span>
+          <span>20개</span>
+          <span class="pass-score mobile-only">60점</span>
+        </div>
+      </div>
+
+      <form class="mode-form" id="modeForm">
+        <label class="mode-option">
+          <input type="radio" name="mode" value="exam" checked />
+          <strong>기출문제</strong>
+          <select id="examSelect" aria-label="기출문제 회차 선택"></select>
+        </label>
+
+        <label class="mode-option">
+          <input type="radio" name="mode" value="subject" />
+          <strong>과목별 문제</strong>
+          <select id="subjectSelect" aria-label="과목 선택"></select>
+        </label>
+
+        <label class="mode-option">
+          <input type="radio" name="mode" value="mock" />
+          <strong>모의고사</strong>
+          <span>전체 문제에서 무작위로 출제됩니다.</span>
+        </label>
+
+        <button class="button mode-start" type="submit">시작하기</button>
+      </form>
+    </section>
   </main>
 
   <script src="../js/questions.js"></script>

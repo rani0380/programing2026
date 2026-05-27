@@ -25,87 +25,57 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Computer Based Test Practice</p>
-        <h1>프로그래밍기능사 필기, 실제 CBT처럼 연습하세요.</h1>
-        <p class="hero-desc">
-          연도별 기출문제, 과목별 학습정리, 기출분석 이론, 랜덤 문제, 오답노트를 한 번에 학습할 수 있는 정적 웹사이트입니다.
-        </p>
-        <div class="actions">
-        <a class="button primary" href="pages/subject-list.html">과목별 문제 풀기</a>
-        <a class="button secondary" href="pages/exam-list.html">기출문제 선택</a>
+    <section class="landing-hero">
+      <div class="landing-hero-inner">
+        <span class="hero-kicker">지금 바로 시작하세요</span>
+        <h1>합격을 향한 첫 걸음,<br /><strong>프로그래밍기능사 CBT</strong></h1>
+        <p>기출문제와 과목별 문제, 모의고사, 오답노트로 필기 합격을 준비하세요.</p>
+        <div class="landing-actions">
+          <a class="landing-button primary" href="pages/subject-list.html">시작하기 ›</a>
+          <a class="landing-button ghost" href="#features">기능 살펴보기</a>
         </div>
-      </div>
-
-      <section class="exam-panel" aria-label="오늘의 CBT 현황">
-        <div class="panel-head">
-          <span>오늘의 학습</span>
-          <strong>필기 모의 CBT</strong>
-        </div>
-        <div class="progress-ring" aria-label="목표 달성률 65%">
-          <span>65%</span>
-        </div>
-        <div class="panel-grid">
-          <div><strong>20</strong><span>추천 문제</span></div>
-          <div><strong>60점</strong><span>합격 기준</span></div>
-          <div><strong id="wrongCount">0</strong><span>저장된 오답</span></div>
-        </div>
-      </section>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <p>Quick Start</p>
-        <h2>바로 학습하기</h2>
-      </div>
-      <div class="quick-grid">
-        <a class="quick-card" href="pages/exam-list.html">
-          <span class="quick-icon">01</span>
-          <h3>연도별 기출문제</h3>
-          <p>회차를 선택하고 실제 시험 화면처럼 순서대로 풀이합니다.</p>
-        </a>
-        <a class="quick-card" href="pages/subject-list.html">
-          <span class="quick-icon">02</span>
-          <h3>과목별 문제</h3>
-          <p>연도 구분 없이 원하는 과목만 골라 집중적으로 풀이합니다.</p>
-        </a>
-        <a class="quick-card" href="pages/study.html">
-          <span class="quick-icon">03</span>
-          <h3>과목별 학습정리</h3>
-          <p>필기 과목별로 자주 나오는 개념을 먼저 정리합니다.</p>
-        </a>
-        <a class="quick-card" href="pages/theory-python.html">
-          <span class="quick-icon">04</span>
-          <h3>기출분석 이론</h3>
-          <p>기본서 기출분석 자료를 바탕으로 Python 핵심 이론을 요약했습니다.</p>
-        </a>
       </div>
     </section>
 
-    <section class="section split-section">
+    <section class="home-modes" id="features">
+      <a class="mode-card primary-mode" href="pages/subject-list.html">
+        <span>01</span>
+        <h2>풀이 방식 선택</h2>
+        <p>기출문제, 과목별 문제, 모의고사 중 원하는 방식으로 시작합니다.</p>
+      </a>
+      <a class="mode-card" href="pages/exam-list.html">
+        <span>02</span>
+        <h2>기출문제</h2>
+        <p>연도와 회차를 선택해 실제 CBT처럼 순서대로 풀이합니다.</p>
+      </a>
+      <a class="mode-card" href="pages/study.html">
+        <span>03</span>
+        <h2>학습정리</h2>
+        <p>시험에 자주 나오는 기본 개념을 과목별로 정리합니다.</p>
+      </a>
+      <a class="mode-card" href="pages/wrong-note.html">
+        <span>04</span>
+        <h2>오답노트</h2>
+        <p>어려운 문제를 저장하고 다시 확인합니다.</p>
+      </a>
+    </section>
+
+    <section class="home-band">
       <div>
-        <div class="section-heading left">
-          <p>Subjects</p>
-          <h2>필기 과목 구성</h2>
-        </div>
-        <div class="subject-stack">
-          <article><span>컴퓨터 일반</span><p>컴퓨터 구조, 운영체제, 자료 표현</p></article>
-          <article><span>프로그래밍 언어 활용</span><p>Python, Java, JavaScript, 자료형, 연산자</p></article>
-          <article><span>데이터베이스</span><p>SQL, 키, 정규화, 관계형 모델</p></article>
-          <article><span>정보 시스템 일반</span><p>네트워크, 보안, 소프트웨어 공학</p></article>
-        </div>
+        <p class="eyebrow">Subject Map</p>
+        <h2>과목별로 약한 부분만 따로 풀 수 있습니다.</h2>
       </div>
-      <aside class="notice-panel">
-        <h2>학습 방식</h2>
-        <p>이론을 먼저 훑고, 기출문제를 풀고, 틀린 문제를 오답노트에 저장해 반복 학습하세요.</p>
-        <a class="button primary full" href="pages/quiz.html">문제풀이 화면 보기</a>
-      </aside>
+      <div class="subject-strip">
+        <a href="pages/quiz.html?subject=프로그래밍%20언어%20활용">프로그래밍 언어 활용</a>
+        <a href="pages/quiz.html?subject=컴퓨터%20일반">컴퓨터 일반</a>
+        <a href="pages/quiz.html?subject=데이터베이스">데이터베이스</a>
+        <a href="pages/quiz.html?subject=정보%20시스템%20일반">정보 시스템 일반</a>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© 2026 프로그래밍기능사 CBT. 개인 학습용 정적 웹사이트.</p>
+    <p>© 2026 프로그래밍기능사 CBT. 학습용 대구스마트고소프트웨어과 웹사이트.</p>
   </footer>
 
   <script src="js/main.js"></script>

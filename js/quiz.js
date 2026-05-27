@@ -3,41 +3,26 @@ const selectedYear = Number(params.get("year"));
 const selectedRound = Number(params.get("round"));
 const selectedSubject = params.get("subject");
 const isRandom = params.get("mode") === "random";
-
-function getDisplaySubject(item) {
-  if (item.year === 2026 && item.round === 1) {
-    const number = item.id - 8;
-    if ((number >= 1 && number <= 15) || number === 61) return "프로그래밍 언어 활용";
-    if ([16, 21, 50].includes(number)) return "컴퓨터 일반";
-    if (number === 17 || number === 22 || (number >= 24 && number <= 45)) return "데이터베이스";
-    return "정보 시스템 일반";
-  }
-
-  const sampleSubjects = {
-    1: "프로그래밍 언어 활용",
-    2: "컴퓨터 일반",
-    3: "데이터베이스",
-    4: "정보 시스템 일반",
-    5: "프로그래밍 언어 활용",
-    6: "데이터베이스",
-    7: "컴퓨터 일반",
-    8: "정보 시스템 일반"
-  };
-
-  if (sampleSubjects[item.id]) return sampleSubjects[item.id];
-  return item.subject || "기타";
-}
+const isMock = params.get("mode") === "mock";
 
 let quizQuestions = [...questions];
+
 if (selectedYear && selectedRound) {
   quizQuestions = quizQuestions.filter((item) => item.year === selectedYear && item.round === selectedRound);
 }
+
 if (selectedSubject) {
-  quizQuestions = quizQuestions.filter((item) => getDisplaySubject(item) === selectedSubject);
+  quizQuestions = quizQuestions.filter((item) => item.subject === selectedSubject);
 }
-if (isRandom) {
+
+if (isRandom || isMock) {
   quizQuestions = quizQuestions.sort(() => Math.random() - 0.5);
 }
+
+if (isMock) {
+  quizQuestions = quizQuestions.slice(0, Math.min(60, quizQuestions.length));
+}
+
 if (quizQuestions.length === 0) {
   quizQuestions = [...questions];
 }
@@ -62,6 +47,7 @@ const prevBtn = document.querySelector("#prevBtn");
 const checkBtn = document.querySelector("#checkBtn");
 const nextBtn = document.querySelector("#nextBtn");
 const saveWrongBtn = document.querySelector("#saveWrongBtn");
+const gradeBtn = document.querySelector("#gradeBtn");
 
 function escapeHtml(value) {
   return String(value)
@@ -77,6 +63,8 @@ function setTitle() {
     quizTitle.textContent = `${selectedYear}년 ${selectedRound}회`;
   } else if (selectedSubject) {
     quizTitle.textContent = selectedSubject;
+  } else if (isMock) {
+    quizTitle.textContent = "모의고사";
   } else if (isRandom) {
     quizTitle.textContent = "랜덤 문제";
   }
@@ -111,7 +99,7 @@ function renderQuestion() {
 
   questionCounter.textContent = `${currentIndex + 1} / ${quizQuestions.length}`;
   meterBar.style.width = `${progress}%`;
-  subjectBadge.textContent = getDisplaySubject(item);
+  subjectBadge.textContent = item.subject;
   examBadge.textContent = `${item.year}년 ${item.round}회`;
   questionText.textContent = item.question;
   answerBox.classList.add("hidden");
@@ -209,7 +197,7 @@ function saveWrongNote() {
   const saved = JSON.parse(localStorage.getItem("wrongNotes") || "[]");
   const exists = saved.some((note) => note.id === item.id);
   if (!exists) {
-    saved.push({ ...item, subject: getDisplaySubject(item) });
+    saved.push(item);
     localStorage.setItem("wrongNotes", JSON.stringify(saved));
   }
   alert("오답노트에 저장했습니다.");
@@ -220,6 +208,7 @@ renderQuestion();
 
 checkBtn.addEventListener("click", () => showAnswer(true));
 saveWrongBtn.addEventListener("click", saveWrongNote);
+gradeBtn.addEventListener("click", gradeAll);
 prevBtn.addEventListener("click", () => {
   if (currentIndex > 0) {
     currentIndex -= 1;
