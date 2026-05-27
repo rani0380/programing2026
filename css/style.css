@@ -542,6 +542,20 @@ input {
   white-space: pre-wrap;
 }
 
+.question-media {
+  margin: -4px 0 24px;
+}
+
+.question-media img {
+  display: block;
+  max-width: min(100%, 760px);
+  height: auto;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
 .choice-list {
   display: grid;
   gap: 10px;

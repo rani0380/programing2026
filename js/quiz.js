@@ -41,6 +41,7 @@ const numberBoard = document.querySelector("#numberBoard");
 const subjectBadge = document.querySelector("#subjectBadge");
 const examBadge = document.querySelector("#examBadge");
 const questionText = document.querySelector("#questionText");
+const questionImage = document.querySelector("#questionImage");
 const choiceList = document.querySelector("#choiceList");
 const answerBox = document.querySelector("#answerBox");
 const prevBtn = document.querySelector("#prevBtn");
@@ -121,6 +122,13 @@ function renderQuestion() {
   subjectBadge.textContent = item.subject;
   examBadge.textContent = `${item.year}년 ${item.round}회`;
   questionText.textContent = item.question;
+  if (item.image) {
+    questionImage.innerHTML = `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt || "문제 그림")}" />`;
+    questionImage.classList.remove("hidden");
+  } else {
+    questionImage.innerHTML = "";
+    questionImage.classList.add("hidden");
+  }
   answerBox.classList.add("hidden");
   answerBox.innerHTML = "";
   selectedChoice = selectedAnswers.has(currentIndex) ? selectedAnswers.get(currentIndex) : null;
