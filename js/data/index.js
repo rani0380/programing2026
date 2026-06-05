@@ -1,5 +1,5 @@
 (function () {
-  const version = "20260527-data";
+  const version = "20260605-data";
   const files = [
     "2024-2.js",
     "2024-3.js",

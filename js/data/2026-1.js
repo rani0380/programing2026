@@ -3,7 +3,7 @@ window.questionBanks = window.questionBanks || [];
 window.questionBanks.push({
   year: 2026,
   round: 1,
-  title: "2026? 1? ????",
+  title: "2026년 1회 기출문제",
   questions: [
   {
     "id": 9,
@@ -784,19 +784,6 @@ window.questionBanks.push({
     ],
     "answer": 1,
     "explanation": "GUI는 그래픽 화면에서 마우스로 아이콘이나 메뉴를 선택해 작업하는 방식입니다."
-  },
-  {
-    "id": 69,
-    "subject": "프로그래밍 언어 활용",
-    "question": "문제 내용을 입력하세요.",
-    "choices": [
-      "선택지1",
-      "선택지2",
-      "선택지3",
-      "선택지4"
-    ],
-    "answer": 0,
-    "explanation": "해설을 입력하세요."
   }
 ]
 });
