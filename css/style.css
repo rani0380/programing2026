@@ -280,6 +280,7 @@ input {
 }
 
 .quick-card,
+.study-card,
 .study-grid article,
 .exam-card,
 .wrong-card,
@@ -295,7 +296,8 @@ input {
   padding: 24px;
 }
 
-.quick-card:hover {
+.quick-card:hover,
+.study-card:hover {
   border-color: var(--primary);
   box-shadow: 0 12px 30px rgba(22, 103, 199, 0.12);
 }
@@ -313,6 +315,7 @@ input {
 
 .quick-card h3,
 .subject-stack span,
+.study-card h2,
 .study-grid h2,
 .exam-card h2,
 .wrong-card h2 {
@@ -322,6 +325,7 @@ input {
 
 .quick-card p,
 .subject-stack p,
+.study-card p,
 .study-grid p,
 .exam-card p,
 .wrong-card p,
@@ -623,8 +627,19 @@ input {
 }
 
 .study-grid article,
+.study-card,
 .empty-state {
   padding: 24px;
+}
+
+.study-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 188px;
+}
+
+.study-card .text-link {
+  margin-top: auto;
 }
 
 .wrong-card {

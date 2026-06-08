@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>컴퓨터 일반 개념이론 | 프로그래밍기능사 CBT</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">CBT</span>
+      <span>프로그래밍기능사</span>
+    </a>
+    <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="메뉴 열기">☰</button>
+    <nav class="nav" id="navMenu" aria-label="주요 메뉴">
+      <a href="../index.html">홈</a>
+      <a href="exam-list.html">기출문제</a>
+      <a href="subject-list.html">과목별 문제</a>
+      <a href="quiz.html">문제풀이</a>
+      <a href="study.html" aria-current="page">학습정리</a>
+      <a href="theory-python.html">기출분석 이론</a>
+      <a href="wrong-note.html">오답노트</a>
+    </nav>
+  </header>
+
+  <main class="page-shell theory-shell">
+    <div class="page-title">
+      <p>Computer Theory</p>
+      <h1>컴퓨터 일반 핵심 개념</h1>
+      <p class="page-desc">컴퓨터 구성, 자료 표현, 운영체제와 진법 변환처럼 반복 출제되는 기본 개념을 정리했습니다.</p>
+    </div>
+
+    <section class="theory-layout">
+      <aside class="theory-toc">
+        <a href="#hardware">하드웨어 구성</a>
+        <a href="#memory">기억장치</a>
+        <a href="#number">진법 변환</a>
+        <a href="#data">자료 표현</a>
+        <a href="#os">운영체제</a>
+        <a href="#exam-point">기출 포인트</a>
+      </aside>
+
+      <div class="theory-content">
+        <article class="theory-section" id="hardware">
+          <span class="chapter-label">01</span>
+          <h2>하드웨어 구성</h2>
+          <p>컴퓨터는 입력장치, 중앙처리장치, 기억장치, 출력장치로 구성됩니다. CPU는 제어장치, 연산장치, 레지스터를 중심으로 명령을 해석하고 처리합니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>구성 요소</th><th>역할</th></tr></thead>
+              <tbody>
+                <tr><td>제어장치</td><td>명령을 해석하고 장치 동작을 지시합니다.</td></tr>
+                <tr><td>연산장치</td><td>산술 연산과 논리 연산을 수행합니다.</td></tr>
+                <tr><td>레지스터</td><td>CPU 내부의 고속 임시 기억장치입니다.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="theory-section" id="memory">
+          <span class="chapter-label">02</span>
+          <h2>기억장치</h2>
+          <p>주기억장치는 현재 실행 중인 프로그램과 데이터를 저장하고, 보조기억장치는 장기 보관에 사용됩니다. 캐시는 CPU와 주기억장치 사이의 속도 차이를 줄입니다.</p>
+          <ul class="theory-list">
+            <li>RAM: 읽기와 쓰기가 가능하지만 전원이 꺼지면 내용이 사라집니다.</li>
+            <li>ROM: 전원이 꺼져도 내용이 유지되며 기본 제어 정보 저장에 사용됩니다.</li>
+            <li>SSD, HDD: 파일과 프로그램을 장기 저장하는 보조기억장치입니다.</li>
+          </ul>
+        </article>
+
+        <article class="theory-section" id="number">
+          <span class="chapter-label">03</span>
+          <h2>진법 변환</h2>
+          <p>2진수, 8진수, 10진수, 16진수 사이의 변환은 자주 출제됩니다. 2진수 네 자리는 16진수 한 자리와 대응됩니다.</p>
+          <pre><code>2진수 1010 = 10진수 10
+2진수 1111 = 16진수 F
+16진수 2A = 2진수 0010 1010</code></pre>
+        </article>
+
+        <article class="theory-section" id="data">
+          <span class="chapter-label">04</span>
+          <h2>자료 표현</h2>
+          <p>컴퓨터는 모든 자료를 0과 1로 표현합니다. 문자 코드는 ASCII, Unicode처럼 문자를 숫자 값으로 대응시키는 규칙입니다.</p>
+          <div class="note-box">
+            <strong>단위</strong>
+            <p>1 Byte는 8 bit입니다. KB, MB, GB 단위 계산 문제에서는 2의 거듭제곱 관계를 확인하세요.</p>
+          </div>
+        </article>
+
+        <article class="theory-section" id="os">
+          <span class="chapter-label">05</span>
+          <h2>운영체제</h2>
+          <p>운영체제는 사용자와 하드웨어 사이에서 자원을 관리합니다. 프로세스, 기억장치, 파일, 입출력 장치를 효율적으로 제어하는 역할을 합니다.</p>
+        </article>
+
+        <article class="theory-section" id="exam-point">
+          <span class="chapter-label">06</span>
+          <h2>기출 포인트</h2>
+          <div class="exam-point-grid">
+            <div><strong>CPU 구성</strong><p>제어장치, 연산장치, 레지스터의 역할을 구분합니다.</p></div>
+            <div><strong>기억장치 속도</strong><p>레지스터, 캐시, 주기억장치, 보조기억장치의 특성을 비교합니다.</p></div>
+            <div><strong>진법 변환</strong><p>2진수 네 자리와 16진수 한 자리의 대응을 활용합니다.</p></div>
+            <div><strong>운영체제 기능</strong><p>자원 관리, 프로세스 관리, 파일 관리 키워드를 기억합니다.</p></div>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="quiz.html?subject=컴퓨터 일반">관련 문제 풀기</a>
+            <a class="button secondary" href="study.html">과목별 정리로 돌아가기</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

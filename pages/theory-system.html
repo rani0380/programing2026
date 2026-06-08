@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>정보 시스템 일반 개념이론 | 프로그래밍기능사 CBT</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">CBT</span>
+      <span>프로그래밍기능사</span>
+    </a>
+    <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="메뉴 열기">☰</button>
+    <nav class="nav" id="navMenu" aria-label="주요 메뉴">
+      <a href="../index.html">홈</a>
+      <a href="exam-list.html">기출문제</a>
+      <a href="subject-list.html">과목별 문제</a>
+      <a href="quiz.html">문제풀이</a>
+      <a href="study.html" aria-current="page">학습정리</a>
+      <a href="theory-python.html">기출분석 이론</a>
+      <a href="wrong-note.html">오답노트</a>
+    </nav>
+  </header>
+
+  <main class="page-shell theory-shell">
+    <div class="page-title">
+      <p>Information System Theory</p>
+      <h1>정보 시스템 일반 핵심 개념</h1>
+      <p class="page-desc">네트워크, 보안, 소프트웨어 개발과 테스트, 운영체제 명령어의 핵심만 정리했습니다.</p>
+    </div>
+
+    <section class="theory-layout">
+      <aside class="theory-toc">
+        <a href="#network">네트워크</a>
+        <a href="#security">정보 보안</a>
+        <a href="#dev">개발 단계</a>
+        <a href="#test">테스트 기법</a>
+        <a href="#command">운영체제 명령어</a>
+        <a href="#exam-point">기출 포인트</a>
+      </aside>
+
+      <div class="theory-content">
+        <article class="theory-section" id="network">
+          <span class="chapter-label">01</span>
+          <h2>네트워크</h2>
+          <p>네트워크는 컴퓨터와 장치를 연결해 데이터를 주고받는 구조입니다. LAN은 가까운 범위, WAN은 넓은 범위의 통신망입니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>용어</th><th>의미</th></tr></thead>
+              <tbody>
+                <tr><td>IP</td><td>네트워크에서 장치를 식별하는 주소입니다.</td></tr>
+                <tr><td>TCP</td><td>신뢰성 있는 연결형 전송을 제공합니다.</td></tr>
+                <tr><td>UDP</td><td>빠른 비연결형 전송에 사용됩니다.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="theory-section" id="security">
+          <span class="chapter-label">02</span>
+          <h2>정보 보안</h2>
+          <p>정보 보안의 핵심 목표는 기밀성, 무결성, 가용성입니다. 인증, 접근 제어, 암호화는 보안을 유지하기 위한 대표적인 방법입니다.</p>
+          <ul class="theory-list">
+            <li>기밀성: 허가된 사용자만 정보를 볼 수 있습니다.</li>
+            <li>무결성: 정보가 임의로 변경되지 않도록 보장합니다.</li>
+            <li>가용성: 필요한 때에 서비스를 사용할 수 있어야 합니다.</li>
+          </ul>
+        </article>
+
+        <article class="theory-section" id="dev">
+          <span class="chapter-label">03</span>
+          <h2>소프트웨어 개발 단계</h2>
+          <p>소프트웨어 개발은 요구사항 분석, 설계, 구현, 테스트, 유지보수의 흐름으로 진행됩니다. 각 단계의 산출물과 목적을 구분하세요.</p>
+        </article>
+
+        <article class="theory-section" id="test">
+          <span class="chapter-label">04</span>
+          <h2>테스트 기법</h2>
+          <p>화이트박스 테스트는 내부 구조를 알고 검사하고, 블랙박스 테스트는 입력과 출력 중심으로 기능을 확인합니다.</p>
+          <div class="note-box">
+            <strong>자주 나오는 구분</strong>
+            <p>단위 테스트, 통합 테스트, 시스템 테스트, 인수 테스트는 범위가 점점 넓어지는 흐름으로 이해하면 쉽습니다.</p>
+          </div>
+        </article>
+
+        <article class="theory-section" id="command">
+          <span class="chapter-label">05</span>
+          <h2>운영체제 명령어</h2>
+          <p>명령어 문제는 파일과 디렉터리 조작, 현재 위치 확인, 목록 보기처럼 기본 동작을 묻는 경우가 많습니다.</p>
+          <pre><code>dir       Windows 파일 목록 보기
+cd        디렉터리 이동
+copy      파일 복사
+del       파일 삭제</code></pre>
+        </article>
+
+        <article class="theory-section" id="exam-point">
+          <span class="chapter-label">06</span>
+          <h2>기출 포인트</h2>
+          <div class="exam-point-grid">
+            <div><strong>TCP와 UDP</strong><p>신뢰성 중심인지 속도 중심인지 구분합니다.</p></div>
+            <div><strong>보안 3요소</strong><p>기밀성, 무결성, 가용성의 의미를 암기합니다.</p></div>
+            <div><strong>개발 절차</strong><p>분석, 설계, 구현, 테스트, 유지보수 순서를 확인합니다.</p></div>
+            <div><strong>테스트 종류</strong><p>화이트박스와 블랙박스의 관점을 구분합니다.</p></div>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="quiz.html?subject=정보 시스템 일반">관련 문제 풀기</a>
+            <a class="button secondary" href="study.html">과목별 정리로 돌아가기</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
