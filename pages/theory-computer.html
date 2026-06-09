@@ -38,6 +38,12 @@
         <a href="#number">진법 변환</a>
         <a href="#data">자료 표현</a>
         <a href="#os">운영체제</a>
+        <a href="#cpu-cycle">명령 처리 사이클</a>
+        <a href="#bus">버스 시스템</a>
+        <a href="#interrupt">인터럽트 & 입출력</a>
+        <a href="#memory-hierarchy">기억장치 계층 구조</a>
+        <a href="#logic">논리 회로 & 불 대수</a>
+        <a href="#storage">보조기억장치 종류</a>
         <a href="#exam-point">기출 포인트</a>
       </aside>
 
@@ -94,13 +100,175 @@
           <p>운영체제는 사용자와 하드웨어 사이에서 자원을 관리합니다. 프로세스, 기억장치, 파일, 입출력 장치를 효율적으로 제어하는 역할을 합니다.</p>
         </article>
 
-        <article class="theory-section" id="exam-point">
+        <!-- ───── 추가 섹션 시작 ───── -->
+
+        <article class="theory-section" id="cpu-cycle">
           <span class="chapter-label">06</span>
+          <h2>CPU 명령 처리 사이클</h2>
+          <p>CPU는 하나의 명령어를 처리하기 위해 <strong>인출(Fetch) → 해석(Decode) → 실행(Execute) → 저장(Write Back)</strong> 단계를 반복합니다. 이 과정을 <strong>명령 사이클(Instruction Cycle)</strong>이라고 합니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>단계</th><th>설명</th><th>관련 레지스터</th></tr></thead>
+              <tbody>
+                <tr><td>인출 (Fetch)</td><td>PC가 가리키는 주소에서 명령어를 메모리로부터 가져옵니다.</td><td>PC, MAR, MBR</td></tr>
+                <tr><td>해석 (Decode)</td><td>제어장치가 명령어를 해석하여 수행할 동작을 결정합니다.</td><td>IR</td></tr>
+                <tr><td>실행 (Execute)</td><td>ALU가 산술·논리 연산을 수행하거나 데이터를 이동합니다.</td><td>ACC, ALU</td></tr>
+                <tr><td>저장 (Write Back)</td><td>연산 결과를 레지스터 또는 메모리에 기록합니다.</td><td>MAR, MBR</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note-box">
+            <strong>주요 레지스터 정리</strong>
+            <ul class="theory-list" style="margin-top:0.5rem">
+              <li><strong>PC (Program Counter)</strong>: 다음 실행할 명령어의 주소를 저장합니다.</li>
+              <li><strong>IR (Instruction Register)</strong>: 현재 실행 중인 명령어를 저장합니다.</li>
+              <li><strong>MAR (Memory Address Register)</strong>: 접근할 메모리 주소를 저장합니다.</li>
+              <li><strong>MBR (Memory Buffer Register)</strong>: 메모리에서 읽거나 쓸 데이터를 임시 저장합니다.</li>
+              <li><strong>ACC (Accumulator)</strong>: 연산 결과를 임시 저장합니다.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="theory-section" id="bus">
+          <span class="chapter-label">07</span>
+          <h2>버스 시스템</h2>
+          <p>버스(Bus)는 CPU, 메모리, 입출력 장치 사이에서 데이터를 전달하는 공유 통신 경로입니다. 기능에 따라 세 가지로 구분됩니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>버스 종류</th><th>전달 내용</th><th>방향</th></tr></thead>
+              <tbody>
+                <tr><td>데이터 버스</td><td>실제 데이터(명령어, 값)</td><td>양방향</td></tr>
+                <tr><td>주소 버스</td><td>메모리 또는 I/O 장치의 주소</td><td>단방향 (CPU → 장치)</td></tr>
+                <tr><td>제어 버스</td><td>읽기/쓰기, 인터럽트 등 제어 신호</td><td>양방향</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note-box">
+            <strong>버스 폭과 성능</strong>
+            <p>데이터 버스의 폭(비트 수)이 넓을수록 한 번에 전송 가능한 데이터 양이 늘어납니다. 주소 버스의 폭은 최대 접근 가능한 메모리 용량을 결정합니다 (32비트 주소 → 최대 4GB).</p>
+          </div>
+        </article>
+
+        <article class="theory-section" id="interrupt">
+          <span class="chapter-label">08</span>
+          <h2>인터럽트 &amp; 입출력 방식</h2>
+          <p><strong>인터럽트(Interrupt)</strong>는 CPU가 현재 작업을 중단하고 긴급한 요청을 처리하도록 하는 신호입니다. 처리 후 원래 작업으로 복귀합니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>인터럽트 종류</th><th>발생 원인</th></tr></thead>
+              <tbody>
+                <tr><td>외부 인터럽트</td><td>키보드 입력, 타이머, 전원 이상 등 외부 장치 신호</td></tr>
+                <tr><td>내부 인터럽트</td><td>0으로 나누기, 오버플로우 등 CPU 내부 오류</td></tr>
+                <tr><td>소프트웨어 인터럽트</td><td>프로그램의 명시적 인터럽트 명령 (SVC 등)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top:1rem">입출력 방식은 CPU 개입 정도에 따라 구분됩니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>방식</th><th>특징</th></tr></thead>
+              <tbody>
+                <tr><td>프로그램 I/O (폴링)</td><td>CPU가 장치 상태를 반복적으로 확인합니다. CPU 자원을 많이 소모합니다.</td></tr>
+                <tr><td>인터럽트 구동 I/O</td><td>장치가 준비되면 인터럽트로 CPU에 알립니다. CPU 효율이 높습니다.</td></tr>
+                <tr><td>DMA (Direct Memory Access)</td><td>CPU 개입 없이 메모리와 장치가 직접 데이터를 주고받습니다. 대용량 전송에 유리합니다.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="theory-section" id="memory-hierarchy">
+          <span class="chapter-label">09</span>
+          <h2>기억장치 계층 구조</h2>
+          <p>기억장치는 속도와 용량, 비용을 기준으로 계층을 형성합니다. 상위 계층일수록 빠르고 용량이 작으며 비쌉니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>계층</th><th>종류</th><th>속도</th><th>용량</th><th>휘발성</th></tr></thead>
+              <tbody>
+                <tr><td>1계층</td><td>레지스터</td><td>가장 빠름</td><td>매우 작음 (수십 바이트)</td><td>휘발성</td></tr>
+                <tr><td>2계층</td><td>캐시 메모리 (L1/L2/L3)</td><td>매우 빠름</td><td>KB ~ 수십 MB</td><td>휘발성</td></tr>
+                <tr><td>3계층</td><td>주기억장치 (RAM)</td><td>빠름</td><td>GB 단위</td><td>휘발성</td></tr>
+                <tr><td>4계층</td><td>보조기억장치 (SSD/HDD)</td><td>느림</td><td>TB 단위</td><td>비휘발성</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note-box">
+            <strong>캐시 적중률 (Hit Ratio)</strong>
+            <p>CPU가 필요한 데이터를 캐시에서 찾는 비율을 말합니다. 적중률이 높을수록 평균 메모리 접근 시간이 줄어듭니다.</p>
+            <pre><code>평균 접근 시간 = 캐시 접근 시간 × 적중률 + 주기억장치 접근 시간 × (1 - 적중률)</code></pre>
+          </div>
+        </article>
+
+        <article class="theory-section" id="logic">
+          <span class="chapter-label">10</span>
+          <h2>논리 회로 &amp; 불 대수</h2>
+          <p>논리 회로는 0과 1의 논리값을 처리하는 전자 회로입니다. <strong>불 대수(Boolean Algebra)</strong>를 이용해 논리 연산을 수식으로 표현합니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>게이트</th><th>기호</th><th>설명</th><th>진리표 요약</th></tr></thead>
+              <tbody>
+                <tr><td>AND</td><td>A · B</td><td>두 입력이 모두 1일 때만 출력 1</td><td>1·1=1, 나머지=0</td></tr>
+                <tr><td>OR</td><td>A + B</td><td>하나 이상 1이면 출력 1</td><td>0+0=0, 나머지=1</td></tr>
+                <tr><td>NOT</td><td>Ā</td><td>입력을 반전</td><td>0→1, 1→0</td></tr>
+                <tr><td>NAND</td><td>̄(A·B)</td><td>AND의 반전</td><td>1·1=0, 나머지=1</td></tr>
+                <tr><td>NOR</td><td>̄(A+B)</td><td>OR의 반전</td><td>0+0=1, 나머지=0</td></tr>
+                <tr><td>XOR</td><td>A ⊕ B</td><td>두 입력이 다를 때 출력 1</td><td>0⊕1=1, 1⊕0=1, 같으면=0</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note-box">
+            <strong>드모르간 법칙 (자주 출제!)</strong>
+            <pre><code>̄(A · B) = Ā + B̄    (NAND → NOT OR)
+̄(A + B) = Ā · B̄    (NOR  → NOT AND)</code></pre>
+            <strong style="margin-top:0.75rem; display:block">불 대수 기본 법칙</strong>
+            <pre><code>A + 0 = A       A · 1 = A       (항등 법칙)
+A + 1 = 1       A · 0 = 0       (지배 법칙)
+A + A = A       A · A = A       (멱등 법칙)
+A + Ā = 1       A · Ā = 0       (보수 법칙)</code></pre>
+          </div>
+        </article>
+
+        <article class="theory-section" id="storage">
+          <span class="chapter-label">11</span>
+          <h2>보조기억장치 종류</h2>
+          <p>보조기억장치는 전원이 꺼져도 데이터를 유지하는 비휘발성 저장 장치입니다. 저장 방식에 따라 특성이 크게 다릅니다.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>종류</th><th>저장 방식</th><th>특징</th></tr></thead>
+              <tbody>
+                <tr><td>HDD (하드디스크)</td><td>자기 디스크</td><td>대용량, 저렴, 속도 느림, 충격에 취약. 플래터·헤드·스핀들 구조.</td></tr>
+                <tr><td>SSD (솔리드 스테이트 드라이브)</td><td>플래시 메모리</td><td>빠른 속도, 충격에 강함, 소음 없음, HDD보다 비쌈.</td></tr>
+                <tr><td>USB 플래시 드라이브</td><td>플래시 메모리</td><td>휴대성 우수, 읽기/쓰기 횟수 제한 있음.</td></tr>
+                <tr><td>광학 디스크 (CD/DVD/BD)</td><td>레이저 기록</td><td>CD 700MB, DVD 4.7GB, Blu-ray 25GB 이상. 배포용 미디어로 사용.</td></tr>
+                <tr><td>NAS (Network Attached Storage)</td><td>네트워크 연결</td><td>네트워크를 통해 여러 사용자가 공유하는 스토리지.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note-box">
+            <strong>HDD 주요 용어</strong>
+            <ul class="theory-list" style="margin-top:0.5rem">
+              <li><strong>트랙(Track)</strong>: 플래터 위의 동심원 경로</li>
+              <li><strong>섹터(Sector)</strong>: 트랙을 분할한 최소 저장 단위 (보통 512 B)</li>
+              <li><strong>실린더(Cylinder)</strong>: 여러 플래터에서 같은 위치의 트랙 집합</li>
+              <li><strong>탐색 시간(Seek Time)</strong>: 헤드가 목표 트랙으로 이동하는 시간</li>
+              <li><strong>회전 지연(Rotational Latency)</strong>: 목표 섹터가 헤드 아래에 올 때까지 기다리는 시간</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ───── 기출 포인트 ───── -->
+
+        <article class="theory-section" id="exam-point">
+          <span class="chapter-label">12</span>
           <h2>기출 포인트</h2>
           <div class="exam-point-grid">
             <div><strong>CPU 구성</strong><p>제어장치, 연산장치, 레지스터의 역할을 구분합니다.</p></div>
-            <div><strong>기억장치 속도</strong><p>레지스터, 캐시, 주기억장치, 보조기억장치의 특성을 비교합니다.</p></div>
+            <div><strong>명령 사이클</strong><p>Fetch → Decode → Execute → Write Back 순서와 관련 레지스터(PC, IR, MAR, MBR)를 기억합니다.</p></div>
+            <div><strong>버스 시스템</strong><p>데이터/주소/제어 버스의 방향과 기능 차이를 구분합니다.</p></div>
+            <div><strong>인터럽트 종류</strong><p>외부·내부·소프트웨어 인터럽트와 DMA 방식을 비교합니다.</p></div>
+            <div><strong>기억장치 속도</strong><p>레지스터 → 캐시 → RAM → SSD/HDD 계층 순서를 암기합니다.</p></div>
             <div><strong>진법 변환</strong><p>2진수 네 자리와 16진수 한 자리의 대응을 활용합니다.</p></div>
+            <div><strong>불 대수 & 드모르간</strong><p>̄(A·B) = Ā+B̄ 와 ̄(A+B) = Ā·B̄ 공식을 반드시 외웁니다.</p></div>
+            <div><strong>HDD 용어</strong><p>트랙·섹터·실린더·탐색 시간·회전 지연 개념을 정리합니다.</p></div>
             <div><strong>운영체제 기능</strong><p>자원 관리, 프로세스 관리, 파일 관리 키워드를 기억합니다.</p></div>
           </div>
           <div class="actions">
