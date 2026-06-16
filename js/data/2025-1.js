@@ -222,7 +222,7 @@ window.questionBanks.push({
   {
     "id": 202501017,
     "subject": "컴퓨터 일반",
-    "question": "RISC(Reduced Instruction Set Computer)에 대한 설명으로 틀린 것은?",
+    "question": "RISC에 대한 설명으로 틀린 것은?",
     "choices": [
       "하드웨어나 마이크로 코드 방식으로 구현한다.",
       "모든 명령어를 1사이클에 실행한다.",
@@ -248,7 +248,7 @@ window.questionBanks.push({
   {
     "id": 202501019,
     "subject": "컴퓨터 일반",
-    "question": "명령어(Instruction)의 구성을 가장 바르게 표현한 것은?",
+    "question": "명령어의 구성을 가장 바르게 표현한 것은?",
     "choices": [
       "명령 코드부와 번지부로 구성",
       "오류 검색 코드 형식",
@@ -469,7 +469,7 @@ window.questionBanks.push({
   {
     "id": 202501036,
     "subject": "운영체제",
-    "question": "다음 중 턴어라운드 타임(Turnaround Time)에 대한 설명으로 옳은 것은?",
+    "question": "다음 중 턴어라운드 타임에 대한 설명으로 옳은 것은?",
     "choices": [
       "일정 시간 동안 시스템이 처리하는 작업량이다.",
       "작업을 시스템에 제출한 시점부터 결과를 받을 때까지 걸린 시간이다.",

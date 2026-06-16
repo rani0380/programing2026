@@ -233,7 +233,7 @@ window.questionBanks.push({
   {
     "id": 202502018,
     "subject": "컴퓨터 일반",
-    "question": "명령어(Instruction) 설계 시 고려할 사항으로 옳지 않은 것은?",
+    "question": "명령어 설계 시 고려할 사항으로 옳지 않은 것은?",
     "choices": [
       "컴파일러 기술의 사용",
       "메모리 접근 횟수 감소",

@@ -8,12 +8,12 @@ window.questionBanks.push({
   {
     "id": 202401001,
     "subject": "컴퓨터 일반",
-    "question": "오퍼랜드(Operand) 자체가 연산 대상이 되는 주소지정 방식은?",
+    "question": "오퍼랜드 자체가 연산 대상이 되는 주소지정 방식은?",
     "choices": [
-      "즉시 주소지정(Immediate Addressing)",
-      "직접 주소지정(Direct Addressing)",
-      "간접 주소지정(Indirect Addressing)",
-      "묵시적 주소지정(Implied Addressing)"
+      "즉시 주소지정 방식(Immediate Addressing)",
+      "직접 주소지정 방식(Direct Addressing)",
+      "간접 주소지정 방식(Indirect Addressing)",
+      "묵시적 주소지정 방식(Implied Addressing)"
     ],
     "answer": 0,
     "explanation": "정답은 1번입니다."
@@ -34,7 +34,7 @@ window.questionBanks.push({
   {
     "id": 202401003,
     "subject": "컴퓨터 일반",
-    "question": "전가산기(Full Adder)는 어떤 회로로 구성되는가?",
+    "question": "전가산기는 어떤 회로로 구성되는가?",
     "choices": [
       "반가산기 1개와 OR 게이트로 구성된다.",
       "반가산기 1개와 AND 게이트로 구성된다.",
@@ -103,7 +103,7 @@ window.questionBanks.push({
   {
     "id": 202401008,
     "subject": "컴퓨터 일반",
-    "question": "JK 플립플롭(Flip Flop)에서 보수가 출력되기 위한 J, K의 입력 상태는?",
+    "question": "JK 플립플롭에서 보수가 출력되기 위한 J, K의 입력 상태는?",
     "choices": [
       "J=1, K=0",
       "J=0, K=1",
@@ -142,7 +142,7 @@ window.questionBanks.push({
   {
     "id": 202401011,
     "subject": "컴퓨터 일반",
-    "question": "명령어(Instruction)의 구성을 가장 바르게 표현한 것은?",
+    "question": "명령어의 구성을 가장 바르게 표현한 것은?",
     "choices": [
       "명령 코드부와 번지부로 구성",
       "오류 검색 코드 형식",
@@ -194,7 +194,7 @@ window.questionBanks.push({
   {
     "id": 202401015,
     "subject": "컴퓨터 일반",
-    "question": "다음 중 RISC(Reduced Instruction Set Computer)의 설명으로 옳은 것은?",
+    "question": "다음 중 RISC의 설명으로 옳은 것은?",
     "choices": [
       "메모리에 대한 액세스는 LOAD와 STORE만으로 한정되어 있다.",
       "명령어마다 다른 수행 사이클을 가지므로 파이프라이닝이 어렵다.",
@@ -324,7 +324,7 @@ window.questionBanks.push({
   {
     "id": 202401025,
     "subject": "데이터베이스",
-    "question": "데이터베이스 관리 시스템(DBMS; Database Management System)의 주요 기능에 속하지 않는 것은?",
+    "question": "데이터베이스 관리 시스템(DBMS)의 주요 기능에 속하지 않는 것은?",
     "choices": [
       "관리 기능",
       "정의 기능",
@@ -337,7 +337,7 @@ window.questionBanks.push({
   {
     "id": 202401026,
     "subject": "데이터베이스",
-    "question": "관계형 데이터베이스에서 속성(Attribute)의 수를 의미하는 것은?",
+    "question": "관계형 데이터베이스에서 속성의 수를 의미하는 것은?",
     "choices": [
       "카디널리티(Cardinality)",
       "도메인(Domain)",
