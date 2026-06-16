@@ -534,10 +534,10 @@ window.questionBanks.push({
     "subject": "운영체제",
     "question": "다음 설명에 해당하는 시스템은?",
     "choices": [
-      "This system was developed in which users could interface directly with the computer through terminals. Programs in the system are given a limited amount time called a time-slice Time-Sharing System",
-      "Multi-Processing System",
-      "Batch System",
-      "Single User System"
+      "시분할 시스템(Time-Sharing System)",
+      "다중 처리 시스템(Multi-Processing System)",
+      "일괄 처리 시스템(Batch System)",
+      "단일 사용자 시스템(Single User System)"
     ],
     "answer": 0,
     "explanation": "정답은 1번입니다."

@@ -454,11 +454,11 @@ window.questionBanks.push({
   {
     "id": 202401035,
     "subject": "정보 시스템 일반",
-    "question": "다음 괄호 안의 내용으로 가장 적절한 것은? A(n) ( ) is a program that acts as an intermediary between a user of a computer and the computer hardware.",
+    "question": "사용자와 컴퓨터 하드웨어 사이에서 중개자 역할을 하는 프로그램으로 가장 적절한 것은?",
     "choices": [
-      "Operating System",
-      "Compiler",
-      "File System",
+      "운영체제(Operating System)",
+      "컴파일러(Compiler)",
+      "파일 시스템(File System)",
       "GUI"
     ],
     "answer": 0,
@@ -480,7 +480,7 @@ window.questionBanks.push({
   {
     "id": 202401037,
     "subject": "정보 시스템 일반",
-    "question": "Which is not operating system?",
+    "question": "다음 중 운영체제가 아닌 것은?",
     "choices": [
       "UNIX",
       "DOS",

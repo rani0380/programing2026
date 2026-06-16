@@ -166,12 +166,12 @@ window.questionBanks.push({
   {
     "id": 202404013,
     "subject": "컴퓨터 일반",
-    "question": "다음 블록화 레코드에서 블록화 인수는 ? IBG 논리 레코드 논리 레코드 논리 레코드IBG 논리 레코드 논리 레코드 논리 레코드IBG 1",
+    "question": "다음 블록화 레코드에서 블록화 인수는?",
     "choices": [
+      "1",
       "2",
       "3",
-      "4",
-      ""
+      "4"
     ],
     "answer": 2,
     "explanation": "정답은 3번입니다.",
@@ -207,12 +207,12 @@ window.questionBanks.push({
   {
     "id": 202404016,
     "subject": "컴퓨터 일반",
-    "question": "일반적으로 컴퓨터의 에서 하나의 명령어를 실행하기 위하여 CPU이루어지는 동작 단계를 바르게 나열한 것은?",
+    "question": "일반적으로 CPU에서 하나의 명령어를 실행하기 위해 이루어지는 동작 단계를 바르게 나열한 것은?",
     "choices": [
-      "Fetch Cycle Instruction Decoding Cycle",
-      "→ → 작업 명령어 실행 단계Write-Back → 명령어 실행 Fetch Cycle Instruction Decoding Cycle",
-      "→ → 단계 작업Write-Back → 명령어 실행 단계 작업 Fetch Cycle Write-Back",
-      "→ → → 저작권 안내 이 자료는 시나공 카페 회원을 대상으로 하는 자료로서 개인적인 용도로만 사용할 수 있습니다 허락 없이 복제하거나 . 다른 매체에 옮겨 실을 수 없으며 상업적 용도로 사용할 수 없습니다, . 기출문제 정답& 년 회 정보처리기능사 필기 2024 4 회4 - 2 - Instruction Decoding Cycle명령어 실행 Instruction Decoding Cycle Fetch Cycle"
+      "Fetch Cycle → Instruction Decoding Cycle → Write-Back → 명령어 실행",
+      "Fetch Cycle → Instruction Decoding Cycle → 명령어 실행 → Write-Back",
+      "명령어 실행 → Fetch Cycle → Instruction Decoding Cycle → Write-Back",
+      "Instruction Decoding Cycle → 명령어 실행 → Fetch Cycle → Write-Back"
     ],
     "answer": 1,
     "explanation": "정답은 2번입니다."
@@ -220,7 +220,7 @@ window.questionBanks.push({
   {
     "id": 202404017,
     "subject": "컴퓨터 일반",
-    "question": "→ → 단계 작업Write-Back → 논리회로 가산기 누산기 감산기와 가장 관계있는 장치는, , , ?",
+    "question": "논리회로, 가산기, 누산기, 감산기와 가장 관계있는 장치는?",
     "choices": [
       "입 출력장치 /",
       "제어장치",
@@ -233,12 +233,12 @@ window.questionBanks.push({
   {
     "id": 202404018,
     "subject": "컴퓨터 일반",
-    "question": "다음과 같은 논리식으로 구성되는 회로는 단 는 합 ? ( , S (Sum), 는 자리올림 을 나타낸다C (Carry) .) S = A ㆍB+A B ㆍC = A B 반가산기(Half Adder)",
+    "question": "다음 논리식으로 구성되는 회로는? 단, S는 합(Sum), C는 자리올림(Carry)을 나타낸다. S = A'ㆍB + AㆍB', C = AㆍB",
     "choices": [
+      "반가산기(Half Adder)",
       "전가산기(Full Adder)",
       "전감산기(Full Subtracter)",
-      "부호기(Encoder)",
-      ""
+      "부호기(Encoder)"
     ],
     "answer": 0,
     "explanation": "정답은 1번입니다."
@@ -454,12 +454,12 @@ window.questionBanks.push({
   {
     "id": 202404035,
     "subject": "정보 시스템 일반",
-    "question": "다음 안의 내용으로 가장 적절한 것은 ( ) ? A(n) ( ) is a program that acts an intermediary between a user of computer and the computer hardware. Operating System",
+    "question": "사용자와 컴퓨터 하드웨어 사이에서 중개자 역할을 하는 프로그램으로 가장 적절한 것은?",
     "choices": [
-      "Compiler",
-      "File System",
-      "GUI",
-      "회4 - 3 - 도스 의 내부 명령어에 대한 설명으로 옳은 것은"
+      "운영체제(Operating System)",
+      "컴파일러(Compiler)",
+      "파일 시스템(File System)",
+      "GUI"
     ],
     "answer": 0,
     "explanation": "정답은 1번입니다."
@@ -480,7 +480,7 @@ window.questionBanks.push({
   {
     "id": 202404037,
     "subject": "정보 시스템 일반",
-    "question": "Which is not operating system?",
+    "question": "다음 중 운영체제가 아닌 것은?",
     "choices": [
       "UNIX",
       "DOS",
@@ -727,7 +727,7 @@ window.questionBanks.push({
   {
     "id": 202404056,
     "subject": "정보 시스템 일반",
-    "question": "회4 - 4 - 다음 중 방식에 속하지 않는 것은 ARQ ?",
+    "question": "다음 중 ARQ 방식에 속하지 않는 것은?",
     "choices": [
       "전진오류수정(FEC)",
       "Stop-and-Wait ARQ",

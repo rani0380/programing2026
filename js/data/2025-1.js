@@ -469,12 +469,12 @@ window.questionBanks.push({
   {
     "id": 202501036,
     "subject": "운영체제",
-    "question": "Which of the following is the correct explanation of Turnaround Time?",
+    "question": "다음 중 턴어라운드 타임(Turnaround Time)에 대한 설명으로 옳은 것은?",
     "choices": [
-      "The amount of work a system processes within a certain period of time.",
-      "The elapsed time from when a job is submitted to the system until the results are received.",
-      "The degree to which the system is immediately usable when needed.",
-      "The extent to which the system accurately solves a given problem."
+      "일정 시간 동안 시스템이 처리하는 작업량이다.",
+      "작업을 시스템에 제출한 시점부터 결과를 받을 때까지 걸린 시간이다.",
+      "필요할 때 시스템을 즉시 사용할 수 있는 정도이다.",
+      "시스템이 주어진 문제를 정확하게 해결하는 정도이다."
     ],
     "answer": 1,
     "explanation": "정답은 2번입니다."
@@ -573,12 +573,12 @@ window.questionBanks.push({
   {
     "id": 202501044,
     "subject": "운영체제",
-    "question": "Which one does below sentence describe?\nIt is situation of infinite waiting of unusable resources, because one program is going to use the device in use by other program at multiprogramming.",
+    "question": "다중 프로그래밍 환경에서 한 프로그램이 다른 프로그램이 사용 중인 장치를 사용하려고 하여, 사용할 수 없는 자원을 무한정 기다리는 상태는?",
     "choices": [
-      "DeadLock",
-      "Overlay",
-      "Paging",
-      "Buffering"
+      "교착상태(Deadlock)",
+      "오버레이(Overlay)",
+      "페이징(Paging)",
+      "버퍼링(Buffering)"
     ],
     "answer": 0,
     "explanation": "정답은 1번입니다."
