@@ -34,7 +34,7 @@ window.questionBanks.push({
   {
     "id": 202502003,
     "subject": "컴퓨터 일반",
-    "question": "다음 중 절대주소(Absolute Address) 표현 방식인 것은 ?",
+    "question": "다음 중 절대주소(Absolute Address) 표현 방식인 것은?",
     "choices": [
       "즉시 주소 지정방식(Immediate Address)",
       "직접 주소 지정방식(Direct Address)",
@@ -138,7 +138,7 @@ window.questionBanks.push({
   {
     "id": 202502011,
     "subject": "컴퓨터 일반",
-    "question": "의 종류에 해당되지 않는 것은Flip-Flop ?",
+    "question": "Flip-Flop의 종류에 해당되지 않는 것은?",
     "choices": [
       "R Flip Flop",
       "– T Flip-Flop",
@@ -166,7 +166,7 @@ window.questionBanks.push({
   {
     "id": 202502013,
     "subject": "컴퓨터 일반",
-    "question": "의 주요 구성 요소가 아닌 것은DMA(Direct Memory Access) ?",
+    "question": "DMA(Direct Memory Access)의 주요 구성 요소가 아닌 것은?",
     "choices": [
       "데이터 카운터",
       "주소 레지스터",
@@ -207,7 +207,7 @@ window.questionBanks.push({
   {
     "id": 202502016,
     "subject": "컴퓨터 일반",
-    "question": "반가산기 에서 두 개의 입력 비트가 모두 일 때 합(Half-Adder) 1은(Sum) ?",
+    "question": "반가산기(Half-Adder)에서 두 개의 입력 비트가 모두 1일 때 합(Sum)은?",
     "choices": [
       "0",
       "1",
@@ -233,7 +233,7 @@ window.questionBanks.push({
   {
     "id": 202502018,
     "subject": "컴퓨터 일반",
-    "question": "명령어 설계 시 고려할 사항으로 옳지 않은 것은(Instruction) ?",
+    "question": "명령어(Instruction) 설계 시 고려할 사항으로 옳지 않은 것은?",
     "choices": [
       "컴파일러 기술의 사용",
       "메모리 접근 횟수 감소",
@@ -363,7 +363,7 @@ window.questionBanks.push({
   {
     "id": 202502028,
     "subject": "데이터베이스 일반",
-    "question": "다음 문의 실행 결과를 가장 올바르게 설명한 것은SQL ?",
+    "question": "다음 SQL문의 실행 결과를 가장 올바르게 설명한 것은?",
     "choices": [
       "인사 DROP Table Cascade; 인사 테이블을 삭제함",
       "인사 테이블과 인사 테이블을 참조하는 모든 테이블을 삭제함",
@@ -376,7 +376,7 @@ window.questionBanks.push({
   {
     "id": 202502029,
     "subject": "데이터베이스 일반",
-    "question": "관계형 데이터베이스에서 튜플 의 수를 의미하는 것은(Tuple) ?",
+    "question": "관계형 데이터베이스에서 튜플(Tuple)의 수를 의미하는 것은?",
     "choices": [
       "카디널리티(Cardinality)",
       "도메인(Domain)",
@@ -402,7 +402,7 @@ window.questionBanks.push({
   {
     "id": 202502031,
     "subject": "운영체제",
-    "question": "?",
+    "question": "운영체제의 발달 과정을 바르게 나열한 것은?",
     "choices": [
       "단일 처리 일괄 처리 다중 프로그래밍 다중 처리",
       "→ → → 분산 처리→ 단일 처리 일괄 처리 다중 처리 분산 처리 다중",
@@ -415,7 +415,7 @@ window.questionBanks.push({
   {
     "id": 202502032,
     "subject": "운영체제",
-    "question": "Windows 10 ?",
+    "question": "Windows 10에서 다음 설명에 해당하는 것은?",
     "choices": [
       "ㆍ확장자가 이며 컴퓨터에 여러 개 존재할 수 있다LNK , . ㆍ해당 프로그램을 찾아서 실행하지 않고 바탕 화면에 서 바로 실행할 수 있도록 도와준다. ㆍ사용자가 임의로 생성하거나 삭제할 수 있다. ㆍ삭제 시 해당 프로그램에는 영향이 없다. 아이콘",
       "바로 가기 단축 아이콘( )",
@@ -428,7 +428,7 @@ window.questionBanks.push({
   {
     "id": 202502033,
     "subject": "운영체제",
-    "question": "?",
+    "question": "파일 시스템에 대한 설명으로 옳지 않은 것은?",
     "choices": [
       "는 리눅스에서 사용하는 파일 시스템이다ext .",
       "는 유닉스에서 사용하는 파일 시스템으로 슈퍼 블록UFS , ,",
@@ -441,7 +441,7 @@ window.questionBanks.push({
   {
     "id": 202502034,
     "subject": "운영체제",
-    "question": "(MS-DOS)것은?",
+    "question": "MS-DOS의 시스템 파일이 아닌 것은?",
     "choices": [
       "IO.SYS",
       "MS.DOS",
@@ -467,7 +467,7 @@ window.questionBanks.push({
   {
     "id": 202502036,
     "subject": "운영체제",
-    "question": "UNIX ?",
+    "question": "UNIX에서 현재 작업 디렉터리의 경로를 출력하는 명령어는?",
     "choices": [
       "pwd",
       "cat",
@@ -532,7 +532,7 @@ window.questionBanks.push({
   {
     "id": 202502041,
     "subject": "운영체제",
-    "question": "“This system” ?",
+    "question": "다음 설명에 해당하는 시스템은?",
     "choices": [
       "This system was developed in which users could interface directly with the computer through terminals. Programs in the system are given a limited amount time called a time-slice Time-Sharing System",
       "Multi-Processing System",
@@ -545,7 +545,7 @@ window.questionBanks.push({
   {
     "id": 202502042,
     "subject": "운영체제",
-    "question": "Windows 10에서 휴지통 에 관한 설명으로 옳은 것은[ ] ?",
+    "question": "Windows 10에서 [휴지통]에 관한 설명으로 옳은 것은?",
     "choices": [
       "휴지통 의 크기에 대한 초기 설정은 하드디스크의 이다[ ] 20% .",
       "휴지통 에 있는 파일들은 디스크의 공간을 차지하지 않는다[ ] .",
@@ -558,7 +558,7 @@ window.questionBanks.push({
   {
     "id": 202502043,
     "subject": "운영체제",
-    "question": "(MS-DOS) ?",
+    "question": "MS-DOS에서 숨김 속성을 해제하는 명령은?",
     "choices": [
       "ATTRIB /-H",
       "ATTRIB /+H",
@@ -571,7 +571,7 @@ window.questionBanks.push({
   {
     "id": 202502044,
     "subject": "운영체제",
-    "question": "UNIX “who” 보여준다 다음 중 명령으로 알 수 없는 내용은. “who” ?",
+    "question": "UNIX의 who 명령으로 알 수 없는 내용은?",
     "choices": [
       "단말명",
       "로그인명",
@@ -610,7 +610,7 @@ window.questionBanks.push({
   {
     "id": 202502047,
     "subject": "운영체제",
-    "question": "UNIX않는 것은?",
+    "question": "UNIX의 주요 구성 요소에 해당하지 않는 것은?",
     "choices": [
       "커널(Kernel)",
       "쉘(Shell)",
@@ -662,7 +662,7 @@ window.questionBanks.push({
   {
     "id": 202502051,
     "subject": "정보통신 일반",
-    "question": "UNIX ?",
+    "question": "UNIX에서 네트워크 연결 상태를 확인하는 명령어는?",
     "choices": [
       "ping",
       "cd",
@@ -675,7 +675,7 @@ window.questionBanks.push({
   {
     "id": 202502052,
     "subject": "정보통신 일반",
-    "question": "· 1200 (Baud)이고 디비트 를 사용한다면 통신 속도 는, (Dibit) [Bps] ?",
+    "question": "Baud가 1200이고 디비트(Dibit)를 사용한다면 통신 속도[Bps]는?",
     "choices": [
       "1200",
       "2400",
@@ -688,7 +688,7 @@ window.questionBanks.push({
   {
     "id": 202502053,
     "subject": "정보통신 일반",
-    "question": "RS-232C ?",
+    "question": "RS-232C가 해당하는 OSI 7계층은?",
     "choices": [
       "압축MPEG",
       "프로토콜HDLC",
@@ -701,7 +701,7 @@ window.questionBanks.push({
   {
     "id": 202502054,
     "subject": "정보통신 일반",
-    "question": "· ?",
+    "question": "반송파의 주파수를 변화시켜 정보를 전송하는 변조 방식은?",
     "choices": [
       "위상 편이 변조(PSK)",
       "주파수 편이 변조(FSK)",
@@ -714,7 +714,7 @@ window.questionBanks.push({
   {
     "id": 202502055,
     "subject": "정보통신 일반",
-    "question": "?",
+    "question": "다음 중 전송 속도가 빠르고 장거리 전송에 적합한 전송 매체는?",
     "choices": [
       "폼스킨 케이블",
       "케이블UTP",
@@ -727,7 +727,7 @@ window.questionBanks.push({
   {
     "id": 202502056,
     "subject": "정보통신 일반",
-    "question": "것은?",
+    "question": "주파수 편이 변조(FSK)의 장점으로 옳지 않은 것은?",
     "choices": [
       "전송로의 레벨 변동에 영향을 받기 쉽다.",
       "모뎀의 구조가 간단하다.",
@@ -753,7 +753,7 @@ window.questionBanks.push({
   {
     "id": 202502058,
     "subject": "정보통신 일반",
-    "question": "OSI 7 ?",
+    "question": "OSI 7계층에 대한 설명으로 옳지 않은 것은?",
     "choices": [
       "다른 시스템 간의 원활한 통신을 위해 국제표준화기구ISO( )",
       "에서 제안한 통신 규약 이다(Protocol) .개방형 시스템 간의 데이터 통신 시 필요한 (Open System)",
@@ -766,7 +766,7 @@ window.questionBanks.push({
   {
     "id": 202502059,
     "subject": "정보통신 일반",
-    "question": "?",
+    "question": "다음 중 실시간 처리 시스템에 적합한 업무는?",
     "choices": [
       "수도세 계산",
       "은행 업무",
@@ -779,7 +779,7 @@ window.questionBanks.push({
   {
     "id": 202502060,
     "subject": "정보통신 일반",
-    "question": "IPv6 ?",
+    "question": "IPv6 주소의 길이는?",
     "choices": [
       "비트16",
       "비트32",

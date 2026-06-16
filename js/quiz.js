@@ -36,8 +36,9 @@ const quizTitle = document.querySelector("#quizTitle");
 const questionCounter = document.querySelector("#questionCounter");
 const meterBar = document.querySelector("#meterBar");
 const scorePoint = document.querySelector("#scorePoint");
-const correctCount = document.querySelector("#correctCount");
-const wrongLiveCount = document.querySelector("#wrongLiveCount");
+const passLine = document.querySelector("#passLine");
+const passStatus = document.querySelector("#passStatus");
+const scoreRule = document.querySelector("#scoreRule");
 const numberBoard = document.querySelector("#numberBoard");
 const subjectBadge = document.querySelector("#subjectBadge");
 const examBadge = document.querySelector("#examBadge");
@@ -50,6 +51,31 @@ const checkBtn = document.querySelector("#checkBtn");
 const nextBtn = document.querySelector("#nextBtn");
 const saveWrongBtn = document.querySelector("#saveWrongBtn");
 const gradeBtn = document.querySelector("#gradeBtn");
+
+const OFFICIAL_TOTAL_SCORE = 100;
+const OFFICIAL_PASS_SCORE = 60;
+const OFFICIAL_QUESTION_COUNT = 60;
+
+function formatScore(score) {
+  return Number.isInteger(score) ? `${score}점` : `${score.toFixed(1)}점`;
+}
+
+function calculateScore(correct, total = quizQuestions.length) {
+  if (!total) return 0;
+  return Math.round((correct / total) * OFFICIAL_TOTAL_SCORE * 10) / 10;
+}
+
+function getGradeSummary() {
+  const values = Array.from(solved.values());
+  const correct = values.filter((item) => item.correct).length;
+  const wrong = values.filter((item) => !item.correct).length;
+  const answered = selectedAnswers.size;
+  const blank = quizQuestions.length - answered;
+  const score = calculateScore(correct);
+  const passed = score >= OFFICIAL_PASS_SCORE;
+
+  return { answered, correct, wrong, blank, score, passed };
+}
 
 function escapeHtml(value) {
   return String(value)
@@ -196,14 +222,15 @@ function showAnswer(markSolved = true) {
 }
 
 function updateScore() {
-  const values = Array.from(solved.values());
-  const correct = values.filter((item) => item.correct).length;
-  const wrong = values.filter((item) => !item.correct).length;
-  const score = quizQuestions.length ? Math.round((correct / quizQuestions.length) * 100) : 0;
+  const { answered, score, passed } = getGradeSummary();
+  const pointPerQuestion = OFFICIAL_TOTAL_SCORE / OFFICIAL_QUESTION_COUNT;
 
-  scorePoint.textContent = `${score}점`;
-  correctCount.textContent = correct;
-  wrongLiveCount.textContent = wrong;
+  scorePoint.textContent = formatScore(score);
+  passLine.textContent = `${OFFICIAL_PASS_SCORE}점`;
+  passStatus.textContent = answered ? (passed ? "합격권" : "미달") : "채점 전";
+  passStatus.classList.toggle("pass", answered && passed);
+  passStatus.classList.toggle("fail", answered && !passed);
+  scoreRule.textContent = `${OFFICIAL_TOTAL_SCORE}점 만점 · ${OFFICIAL_PASS_SCORE}점 이상 합격 · ${OFFICIAL_QUESTION_COUNT}문항 기준 1문항 ${pointPerQuestion.toFixed(2)}점`;
 }
 
 function gradeAll() {
@@ -216,13 +243,9 @@ function gradeAll() {
   updateScore();
   renderNumbers();
 
-  const answered = selectedAnswers.size;
-  const correct = Array.from(solved.values()).filter((item) => item.correct).length;
-  const wrong = answered - correct;
-  const score = Math.round((correct / quizQuestions.length) * 100);
-  const blank = quizQuestions.length - answered;
+  const { answered, correct, wrong, score, blank, passed } = getGradeSummary();
 
-  alert(`채점 완료!\n점수: ${score}점\n정답: ${correct}개\n오답: ${wrong}개\n미응답: ${blank}개`);
+  alert(`채점 완료!\n점수: ${formatScore(score)} (${passed ? "합격권" : "미달"})\n기준: ${OFFICIAL_TOTAL_SCORE}점 만점, ${OFFICIAL_PASS_SCORE}점 이상 합격\n풀이 현황: ${answered}/${quizQuestions.length}문항 응답\n정답: ${correct}개 · 오답: ${wrong}개 · 미응답: ${blank}개`);
 }
 
 function saveWrongNote() {
