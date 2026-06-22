@@ -99,12 +99,12 @@ window.questionBanks.push({
   {
     "id": 202502008,
     "subject": "컴퓨터 일반",
-    "question": "ㆍY = (A + B) (AB와 같은 논리식은) ?",
+    "question": "Y = (A + B)ㆍ(AB)와 같은 논리식은?",
     "choices": [
-      "Y =",
-      "AB + ABY =",
-      "AㆍB ABY =",
-      "AB + (AB)Y ="
+      "Y = AB + AB",
+      "Y = ABㆍAB",
+      "Y = AB + (AB)",
+      "Y = ABㆍ(AB)"
     ],
     "answer": 0,
     "explanation": "정답은 1번입니다."
