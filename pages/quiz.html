@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>문제풀이 | 프로그래밍기능사 CBT</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/quiz-layout.css?v=20260929-1" />
 </head>
 <body>
   <header class="topbar compact">
@@ -38,6 +39,7 @@
         <div><strong id="passStatus">채점 전</strong><span>결과</span></div>
       </div>
       <p class="score-rule" id="scoreRule">100점 만점 · 60문항 기준 1문항 1.67점</p>
+      <details class="quiz-number-picker" open><summary>문제 번호 목록</summary>
       <div class="number-board" id="numberBoard" aria-label="문제 번호"></div>
     </aside>
 
@@ -65,6 +67,6 @@
 
   <script src="../js/data/index.js?v=20260616-question-fixes"></script>
   <script src="../js/questions.js?v=20260605-data"></script>
-  <script src="../js/quiz.js"></script>
+  <script src="../js/quiz.js?v=20260929-layout-1"></script>
 </body>
 </html>

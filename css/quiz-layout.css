@@ -1,0 +1,12 @@
+/* Keep question placement independent of the number of questions. */
+.quiz-layout{max-width:1440px;margin:0 auto;grid-template-columns:290px minmax(0,1fr);align-items:start;gap:24px;padding:24px;min-height:calc(100vh - 68px)}
+.quiz-side{position:sticky;top:88px;max-height:calc(100dvh - 112px);padding:22px;border-radius:12px;gap:18px;min-height:0}
+.quiz-side h1{font-size:1.5rem}.quiz-side .score-summary{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.quiz-side .score-summary div{padding:12px 6px}.quiz-side .score-summary strong{font-size:1.1rem}
+.quiz-main{justify-content:flex-start;padding:0;min-width:0;gap:18px}
+.quiz-number-picker{min-height:0;overflow:auto;scrollbar-gutter:stable}
+.quiz-number-picker summary{cursor:pointer;padding:8px 0 14px;font-weight:700;font-size:14px}
+.number-board{padding:3px;align-content:start}.number-board button{min-height:38px;font-size:14px}
+.question-card{padding:28px;border-radius:12px}.question-card h2{font-size:1.3rem;overflow-wrap:anywhere}.choice strong{overflow-wrap:anywhere;line-height:1.65}
+.quiz-actions{flex-wrap:wrap}.quiz-actions .button{min-height:44px}
+@media(max-width:900px){.quiz-layout{grid-template-columns:1fr;padding:18px;gap:18px}.quiz-side{position:static;max-height:none;padding:18px;gap:14px}.quiz-side .eyebrow{display:none}.quiz-side h1{margin:0}.quiz-side .score-summary{margin:0}.quiz-number-picker{max-height:240px}.number-board{grid-template-columns:repeat(auto-fill,minmax(40px,1fr))}.quiz-main{padding:0}.score-rule{margin:0}.quiz-number-picker summary{padding-bottom:8px}}
+@media(max-width:540px){.quiz-layout{padding:12px;gap:14px}.question-card{padding:20px 16px}.question-card h2{font-size:1.12rem}.choice{padding:10px;gap:8px;grid-template-columns:32px minmax(0,1fr)}.choice span{width:30px;height:30px}.quiz-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.quiz-actions #nextBtn{grid-column:1/-1}.quiz-side .score-summary div{padding:8px}.quiz-side .score-summary strong{font-size:1rem}}

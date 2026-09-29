@@ -1,3 +1,5 @@
+const numberPicker = document.querySelector(".quiz-number-picker");
+if (matchMedia("(max-width: 900px)").matches) numberPicker.open = false;
 const params = new URLSearchParams(location.search);
 const selectedYear = Number(params.get("year"));
 const selectedRound = Number(params.get("round"));
@@ -114,6 +116,7 @@ function renderNumbers() {
   numberBoard.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", () => {
       currentIndex = Number(button.dataset.index);
+      if (matchMedia("(max-width: 900px)").matches) numberPicker.open = false;
       selectedChoice = null;
       renderQuestion();
     });
