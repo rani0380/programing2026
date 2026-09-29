@@ -54,8 +54,8 @@ window.questionBanks.push({
         "그림 3",
         "그림 4"
       ],
-      answer: 0,
-      explanation: "정답은 1번입니다. 두 입력이 모두 1일 때만 출력이 1이므로 AND 회로입니다.",
+      answer: 3,
+      explanation: "정답은 4번(그림 4)입니다. 두 입력이 모두 1일 때만 출력이 1이므로 AND 회로입니다. 그림 1은 OR, 그림 2는 NOR, 그림 3은 NOT 회로입니다.",
       image: "../images/extracted/2024-1-q4-choices.jpg",
       imageAlt: "진리표에 맞는 논리회로 보기 4개"
     },

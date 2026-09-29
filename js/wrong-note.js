@@ -1,5 +1,9 @@
 const wrongList = document.querySelector("#wrongList");
-const saved = JSON.parse(localStorage.getItem("wrongNotes") || "[]");
+const saved = JSON.parse(localStorage.getItem("wrongNotes") || "[]").map((item) => {
+  if (![202401004, 202404004].includes(item.id)) return item;
+  const corrected = questions.find((question) => question.id === item.id);
+  return corrected ? {...item, answer: corrected.answer, explanation: corrected.explanation} : item;
+});
 
 function removeWrong(id) {
   const next = saved.filter((item) => item.id !== id);
