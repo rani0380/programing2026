@@ -37,6 +37,11 @@
     document.getElementById('totalCount').textContent = lessons.reduce((n,l) => n+l.questions.length,0);
     document.getElementById('storageNotice').hidden = storageAvailable;
   }
+  function renderConcepts(lesson) {
+    const sections = window.practicalConcepts[lesson.id];
+    const toc = `<nav class="concept-toc" aria-label="단원 개념 목차"><strong>이 단원에서 배울 내용</strong>${sections.map((section, i) => `<a href="#concept-${lesson.id}-${i}">${i+1}. ${escapeHtml(section.title)}</a>`).join('')}</nav>`;
+    return toc + sections.map((section, i) => `<section class="concept concept-detail" id="concept-${lesson.id}-${i}"><h3>${i+1}. ${escapeHtml(section.title)}</h3>${section.text ? `<p>${escapeHtml(section.text)}</p>` : ''}${section.rows ? `<div class="concept-table-wrap" role="region" aria-label="${escapeHtml(section.title)} 정리표" tabindex="0"><table class="concept-table"><caption>${escapeHtml(section.title)} 정리표</caption><thead><tr>${section.headers.map(h => `<th scope="col">${escapeHtml(h)}</th>`).join('')}</tr></thead><tbody>${section.rows.map(row => `<tr>${row.map((cell, c) => c === 0 ? `<th scope="row">${escapeHtml(cell)}</th>` : `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}${section.code ? `<div class="concept-example"><h4>예제로 확인하기</h4><pre class="practice-code"><code>${escapeHtml(section.code)}</code></pre></div>` : ''}${section.tip ? `<aside class="concept-tip"><strong>꼭 확인하세요</strong><p>${escapeHtml(section.tip)}</p></aside>` : ''}</section>`).join('');
+  }
   function render() {
     const lesson = lessons[lessonIndex];
     renderNavigation();
@@ -51,7 +56,7 @@
     });
     content.setAttribute('aria-labelledby', `tab-${tab}`);
     if (tab === 'concept') {
-      content.innerHTML = lesson.concepts.map(([title, text], i) => `<section class="concept"><h3>${i+1}. ${escapeHtml(title)}</h3><p>${escapeHtml(text)}</p></section>`).join('') + '<button class="practice-button primary" data-action="example">예제 따라가기</button>';
+      content.innerHTML = renderConcepts(lesson) + '<button class="practice-button primary" data-action="example">예제 따라가기</button>';
     } else if (tab === 'example') {
       content.innerHTML = `<h3>실행 흐름을 한 단계씩 따라가세요</h3><pre class="practice-code"><code>${escapeHtml(lesson.example.code)}</code></pre><ol class="trace-steps">${lesson.example.steps.slice(0, stepCount).map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol><p class="answer-help" aria-live="polite">${stepCount} / ${lesson.example.steps.length}단계</p><div class="practice-actions"><button class="practice-button" data-action="step" ${stepCount === lesson.example.steps.length ? 'disabled' : ''}>다음 단계</button><button class="practice-button" data-action="restart">처음부터 보기</button><button class="practice-button primary" data-action="practice">직접 연습하기</button></div>`;
     } else renderQuestion();
