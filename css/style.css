@@ -1445,3 +1445,9 @@ input {
     width: 100%;
   }
 }
+
+/* Allow the additional practical-study menu to fit medium desktop screens. */
+@media (min-width: 921px) and (max-width: 1250px) {
+  .topbar { flex-wrap: wrap; justify-content: center; gap: 6px 24px; padding-top: 10px; padding-bottom: 10px; }
+  .nav { flex-wrap: wrap; justify-content: center; }
+}
